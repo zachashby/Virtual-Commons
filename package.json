@@ -1,0 +1,18 @@
+{
+  "name": "community_forum",
+  "version": "1.0.0",
+  "description": "software_engineering",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node": "^15.8.0",
+    "views": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Zack, Zack, Eric\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[h",
+  "license": "ISC"
+}
