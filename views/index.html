@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Lost and Found</title>
+		<title>Home page</title>
 
-		<style>
-			body{
-				margin-top: 50px;
-				text-align: center;
-			}
-		</style>
+<style>
+	body{
+		margin-top: 50px;
+		text-align: center;
+	}
+</style>
 
-		<style>
+<style>
 ul {
   list-style-type: none;
   margin: 0;
@@ -23,9 +23,9 @@ li {
   float: left;
 }
 
-li a {
+li button {
   display: block;
-  color: white;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -41,10 +41,21 @@ li a:hover {
 	<body>
 
 	<ul>
-  		<li><a class="active" href="#home">Home</a></li>
-  		<li><a href="#news">News</a></li>
-  		<li><a href="#contact">Contact</a></li>
-  		<li><a href="#about">About</a></li>
+  		<form method="get" action="/lost_found">
+  			<li><button>Lost & Found</button></li>
+  		</form>
+
+  		<form method="get" action="/lost_found">
+  			<li><button>Entertainment</button></li>
+  		</form>
+
+  		<form method="get" action="/lost_found">
+  			<li><button>Tutoring</button></li>
+  		</form>
+
+  		<form method="get" action="/lost_found">
+  			<li><button>Lost & Found</button></li>
+  		</form>
 	</ul>
 
 	</body>

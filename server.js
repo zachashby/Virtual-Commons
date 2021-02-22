@@ -13,6 +13,12 @@ app.post('/search_lost', (req, res) => {
 
 });
 
+app.get('/lost_found',(req, res) => {
+
+	res.sendFile(`${__dirname}/views/lost_found.html`);
+
+});
+
 app.get('/new_form', (req, res) => {
 
 	res.sendFile(`${__dirname}/views/new_form.html`);
