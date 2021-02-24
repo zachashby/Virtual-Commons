@@ -4,6 +4,8 @@
   "description": "software_engineering",
   "main": "server.js",
   "dependencies": {
+    "deta": "0.0.8",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "node": "^15.8.0",
     "views": "^1.0.2"
