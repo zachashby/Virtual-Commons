@@ -10,7 +10,6 @@ app.post('/search_lost', (req, res) => {
 	const  item_name = req.body.item_name;
 
 	//database stuff 
-
 });
 
 app.get('/lost_found',(req, res) => {
@@ -28,6 +27,18 @@ app.get('/entertainment',(req, res) =>{
 app.get('/new_form', (req, res) => {
 
 	res.sendFile(`${__dirname}/views/new_form.html`);
+
+});
+
+app.get('/tutoring',(req, res) => {
+
+	res.sendFile(`${__dirname}/views/tutoring.html`);
+
+});
+
+app.get('/news', (req, res) => {
+
+	res.sendFile(`${__dirname}/views/news.html`);
 
 });
 
