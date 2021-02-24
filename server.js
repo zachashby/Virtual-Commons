@@ -19,6 +19,12 @@ app.get('/lost_found',(req, res) => {
 
 });
 
+app.get('/entertainment',(req, res) =>{
+
+	res.sendFile(`${__dirname}/views/entertainment.html`);
+
+});
+
 app.get('/new_form', (req, res) => {
 
 	res.sendFile(`${__dirname}/views/new_form.html`);
