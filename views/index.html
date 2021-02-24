@@ -1,44 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Home page</title>
-
-<style>
-	body{
-		margin-top: 50px;
-		text-align: center;
-	}
-</style>
-
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: left;
-}
-
-li button {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #111;
-}
-</style>
-
+    
 	</head>
 
 	<body>
+<<<<<<< HEAD
 
 	<ul>
   		<form method="get" action="/news">
@@ -58,5 +27,51 @@ li a:hover {
   		</form>
 	</ul>
 
+=======
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">News</a>
+      <a href="#">Activity</a>
+      <a href="#">Tutoring</a>
+      <a href="#">Lost & Found</a> 
+    	<!-- ul>
+      		<form method="get" action="/lost_found" class="menu-button" id="News-menu-button">
+      			<li><button>News</button></li>
+      		</form>
+
+      		<form method="get" action="/entertainment" class="menu-button" id="Activity-menu-button">
+      			<li><button>Activity</button></li>
+      		</form>
+
+      		<form method="get" action="/lost_found" class="menu-button" id="Tutor-menu-button">
+      			<li><button>Tutoring</button></li>
+      		</form>
+
+      		<form method="get" action="/lost_found" class="menu-button" id="lost_found-menu-button">
+      			<li><button>Lost & Found</button></li>
+      		</form>
+    	</ul> */ -->
+    </div>
+
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+
+    <div id="main">
+
+    </div>
+
+    <script>
+            /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+  <script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+     
+  </script>
+>>>>>>> 18370a378207392b6af23f0f835f22ae027e2cc0
 	</body>
 </html>
