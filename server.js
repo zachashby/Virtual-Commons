@@ -1,7 +1,6 @@
 const express = require('express');
 const dotenv = require("dotenv").config();
 const { Deta } = require('deta');
-const dotenv = require("dotenv").config();
 var app = express()
 
 // application setup
