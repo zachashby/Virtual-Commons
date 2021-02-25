@@ -78,16 +78,11 @@ app.post('/tutoring_request', (req, res) => {
 });
 
 app.post('/get_lost_data', (req, res) => {
-	var lost_item_data = req.body
+	// var lost_item_data = req.body
 
-<<<<<<< HEAD
-	console.log(req.body);
+	// console.log(req.body);
 
-	res.send()
-
-});
-
-=======
+	// res.send()
 	const item_name = req.body.item;
 	const name = req.body.name;
 	const grade = req.body.grade;
@@ -98,8 +93,6 @@ app.post('/get_lost_data', (req, res) => {
 });
 
 
-
->>>>>>> f1d8cc72d754430a3c6cb41f76f1d4e4ae70993f
 app.listen(8000, function (){
 	console.log('Listening to PORT 8000');
 });
