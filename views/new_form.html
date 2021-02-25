@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 
-	<head></head>
+	<head>
+		 <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+  	
+  </script>
+	</head>
 
 	<body>
 
@@ -9,7 +16,7 @@
 			<button>Home</button>
 		</form>
 		
-		<form method ='post' action = '/new_form'>
+		<form action = "/get_lost_data" method ="post" >
 
 			<h2>Item's name <input type="text" id="" d="item_name"> </h2>
 			<h2>Your name<input type="text" id="your_name"> </h2>
@@ -21,17 +28,22 @@
 		</form>
 
 		<script type="text/javascript">
-			($"#submit").click(function(){
-				console.log("HEY")
+
+			$("#submit_lost_found").click(function(){
+
+				console.log("HEY");
+
 				var lost_item_data = {
-					item_name: $("#item_name").val();
-					your_name: $("#your_name").val();
-					email: $("#email").val();
-					description: $("#description").val();
+					item_name: $("#item_name").val(),
+					your_name: $("#your_name").val(),
+					email: $("#email").val(),
+					description: $("#description").val()
 
 				}
 
-				$.post("/new_form", lost_item_data);
+				$.post("/get_lost_data", lost_item_data);
+
+				return false;
 
 			})
 
