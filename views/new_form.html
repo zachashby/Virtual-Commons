@@ -9,16 +9,89 @@
 			<button>Home</button>
 		</form>
 		
-		<form>
+		<form method ='post' action = '/new_form'>
 
-			<h2>Item's name <input type="text" name="item_name"></h2>
-			<h2>Email <input type="text" name="email"></h2>
-			<h2>Description<input type="text" name="description"></h2>
+			<h2>Item's name <input type="text" id="" d="item_name"> </h2>
+			<h2>Your name<input type="text" id="your_name"> </h2>
+			<h2>Email <input type="text" id="email"> </h2>
+			<h2>Description<input type="text" id="description"> </h2>
 
-			<button type="submit" >Submit</button>
+			<button type="submit" id="submit_lost_found">Submit</button>
 
 		</form>
+
+		<script type="text/javascript">
+			($"#submit").click(function(){
+				console.log("HEY")
+				var lost_item_data = {
+					item_name: $("#item_name").val();
+					your_name: $("#your_name").val();
+					email: $("#email").val();
+					description: $("#description").val();
+
+				}
+
+				$.post("/new_form", lost_item_data);
+
+			})
+
+		</script>
 
 	</body>
 
 </html>
+
+
+<!-- <button class="btn btn-lg btn-primary" type="submit" id="submit" onclick="location.replace('/main')">Submit!</button>
+      <br />
+      <br />
+    </div>
+
+  </form>
+
+  <script type="text/javascript">
+
+    $("#submit").click(function() {
+      function validateForm() {
+        var isValid = true;
+        $(".form-control").each(function() {
+          if ($(this).val() === "") isValid = false;
+        });
+        $(".chosen-select").each(function() {
+          if ($(this).val() === "") isValid = false;
+        });
+        return isValid;
+      }
+
+      //if (validateForm() == true) {
+        var userData = {
+          name: $("#name").val(),
+          grade: $("#grade").val(),
+          email: $("#email").val(),
+          password: $("#pword").val(),
+          scores: [
+          $("#q1").val(),
+          $("#q2").val(),
+          $("#q3").val(),
+          $("#q4").val(),
+          $("#q5").val(),
+          $("#q6").val(),
+          $("#q7").val(),
+          $("#q8").val(),
+          $("#q9").val(),
+          $("#q10").val()
+          ]
+        };
+
+          //console.log(JSON.stringify(userData));
+
+          $.post("/data", userData);
+          
+
+        //} else {
+          //alert("Please fill out all fields before submitting!");
+        //}
+        return false;
+      });
+ 
+    </script>
