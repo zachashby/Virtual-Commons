@@ -1,39 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-    <link rel="stylesheet" href="./public/style.css" type="text/css"></link>
-    
-		<title>Home page</title>
+    <title>Home page</title>
+    <link type="text/css" rel="stylesheet" href="\style.css">
 
+<style>
+ *{
+
+  }
+
+
+body{
+
+    font-family: "Lato", sans-serif;
+  }
+
+#menu{
+
+  margin: 1%;
+}
+
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav button {
+  background-color: #e0e0eb;
+  width: 100%;
+  text-decoration: none;
+  background-color: none
+
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav button:hover {
+  color: #e0e0eb;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+  </style>
+    
   </head>
 
 	<body> 
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="/views/news.html">News</a>
-      <a href="#">Activity</a>
-      <a href="/views/tutoring.html">Tutoring</a>
-      <a href="/views/lost_found.html">Lost & Found</a> 
-    	 <ul>
-      		<form method="get" action="/news" class="menu-button" id="News-menu-button">
-      			<li><button>News</button></li>
-      		</form>
 
-      		<form method="get" action="/entertainment" class="menu-button" id="Activity-menu-button">
-      			<li><button>Activity</button></li>
-      		</form>
+      <form method="get" action="/news" class="menu-button" id="News-menu-button"><button><a>News</a></button></form>
 
-      		<form method="get" action="/tutoring" class="menu-button" id="Tutor-menu-button">
-      			<li><button>Tutoring</button></li>
-      		</form>
+      <form method="get" action="/entertainment" class="menu-button" id="Activity-menu-button"><button><a>Activity</a></button></form>
 
-      		<form method="get" action="/lost_found" class="menu-button" id="lost_found-menu-button">
-      			<li><button>Lost & Found</button></li>
-      		</form>
-    	</ul>
+      <form method="get" action="/tutoring" class="menu-button" id="Tutor-menu-button"><button><a>Tutoring</a></button></form>
+
+      <form method="get" action="/lost_found" class="menu-button" id="lost_found-menu-button"><button><a>Lost & Found</a></button></form>
+
+    	 
     </div>
+    <br/>
 
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    <span id="menu" style="font-size:30px;cursor:pointer; margin-top:" onclick="openNav()">&#9776;</span>
 
 
     <div id="main">

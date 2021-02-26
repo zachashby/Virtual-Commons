@@ -58,7 +58,6 @@ app.post('/new_news', (req, res) => {
 });
 
 
-
 app.post('/tutoring_request', (req, res) => {
 
 	const name = req.body.name;
@@ -67,7 +66,7 @@ app.post('/tutoring_request', (req, res) => {
 	const subject = req.body.subject;
 	const note = req.body.note;
 
-	new_tutoring { req, name, grade, email, subject, note };
+	new_tutoring ( req, name, grade, email, subject, note );
 
 });
 
@@ -81,8 +80,6 @@ app.post('/get_lost_form', (req, res) => {
 
 	new_lost_form (req, item_name, name, grade, email, description);
 });
-
-
 
 app.listen(8000, function (){
 	console.log('Listening to PORT 8000');
