@@ -9,44 +9,51 @@
 		<script
 		src="https://code.jquery.com/jquery-3.3.1.min.js"
 		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-		crossorigin="anonymous">
-	</script>
-</head>
+		crossorigin="anonymous"></script>
+	</head>
 
-<body>
+	<body>
+		<div id="nav-placeholder">
+		</div>
 
-	<h2>Name <input type="text" id="student_name"></h2>
-	<h2>Grade <input type="text" id="student_grade"></h2>
-	<h2>Email <input type="text" id="email_tutoring"></h2>
-	<h2>Course<input type="text" id="course"></h2>
+		<div id="main">
+			<h2>Name <input type="text" id="student_name"></h2>
+			<h2>Grade <input type="text" id="student_grade"></h2>
+			<h2>Email <input type="text" id="email_tutoring"></h2>
+			<h2>Course<input type="text" id="course"></h2>
 
-	<button type = "submit" id="submit_tutoring">Request tutor</button>
+			<button type = "submit" id="submit_tutoring">Request tutor</button>
+		</div>
 
+		<script>
+			$(function(){
+	        	$("#nav-placeholder").load("/views/nav.html");
+	      	});
+		</script>
 
-	<script type="text/javascript">
+		<script type="text/javascript">
 
-		$("#submit_tutoring").click(function(){
+			$("#submit_tutoring").click(function(){
 
-			console.log("HEY");
+				console.log("HEY");
 
-			var tutor_request_data = {
-				student_name: $("#student_name").val(),
-				student_grade: $("#student_grade").val(),
-				email: $("#email_tutoring").val(),
-				course: $("#course").val()
+				var tutor_request_data = {
+					student_name: $("#student_name").val(),
+					student_grade: $("#student_grade").val(),
+					email: $("#email_tutoring").val(),
+					course: $("#course").val()
+				}
 
-			}
+				console.log(tutor_request_data);
 
-			console.log(tutor_request_data);
+				$.post("/tutoring_request", tutor_request_data);
 
-			$.post("/tutoring_request", tutor_request_data);
+				return false;
 
-			return false;
+			})
 
-		})
+		</script>
 
-	</script>
-
-</body>
+	</body>
 
 </hmtl>

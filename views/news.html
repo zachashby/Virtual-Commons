@@ -2,13 +2,26 @@
 <html>
 
 <head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    
+    <link rel="stylesheet" href="/public/style.css" />
+
 	<title>NEWS</title>
 </head>
 
 <body>
-	<div style="background-color:blue; width:500px; height:500px;"></div>
+	<div id="nav-placeholder">
+	</div>
 
-</script>
+	<div id="main">
+		<div style="background-color:blue; width:500px; height:500px;"></div>
+	</div>
+	<script>
+			$(function(){
+        		$("#nav-placeholder").load("/views/nav.html");
+      		});
+	</script>
+
 
 </body>
 
