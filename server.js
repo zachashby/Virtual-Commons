@@ -7,6 +7,7 @@ var app = express()
 //import database from db.js
 const { new_news, new_lost_form, new_tutoring, new_vid } = require("./db.js");
 
+app.use(express.static("."));
 
 app.get('/', (req, res) => {
 	res.sendFile(`${__dirname}/views/index.html`);
