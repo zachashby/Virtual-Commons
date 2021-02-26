@@ -1,75 +1,88 @@
-*{
-	background: black;
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:wght@500);
 
-	}
+    body {
+      font-family: 'Josefin Sans', serif;
+      background-color: #793140;
+      transition: background-color .5s;
+      color: white;4
+    }
 
+    form {
+      background-color: transparent;
+      border:none ;
+    }
 
-body{
-		margin-top: 50px;
-		text-align: center;
-		font-family: "Lato", sans-serif;
-	}
+    .main-title {
+      position: relative;
+      text-align: center;
+      font-size: 4.5em;
+      font-weight: 800;
+      cursor: pointer;
+      user-select: none;
+    }
 
+    .menu-button {
+      position: relative;
+      background-color: transparent;
+      border: none;
+      outline:none;
+      transition: all 0.5s;
+      cursor: pointer;
+    }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+    .menu-button:hover {
+      -webkit-transform: translateX(20px);
+      transform: translateX(20px);
+      transition: all 0.25s ease; 
+      cursor: pointer;
+    }
+
+    #sidenav-menu {
+      position: relative;
+      left: 30px;
+      top: 10px;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 80px;
+    }
+
+    .sidenav a {
+      padding: 15px 8px 8px 30px;
+      text-decoration: none;
+      font-size: 28px;
+      font-weight: 500;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+      max-width: 80px
+    }
+    .sidenav a:hover {
+      color: #457e81;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
 }
+    #main {
+      transition: margin-left .5s;
+      padding: 16px;
+    }
 
-li {
-  float: left;
-}
-
-li button {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #111;
-}
-
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
