@@ -2,32 +2,36 @@
 <html>
 	<head>
 		<title>Lost and Found</title>
-
-		<link rel="stylesheet" href="styles.css">
-
-		<style>
-			body{
-				margin-top: 50px;
-				text-align: center;
-			}
-		</style>
-
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    	<link rel="stylesheet" href="/public/style.css" />
 	</head>
 
 	<body>
 
-		<h1>LOST & FOUND</h1>
+		<div id="nav-placeholder">
+		</div>
+
+	    <div id="main">
+	      <h2 class="Second-title"> Lost & Found </h2>
+	      	<form method="post" action="/search_lost"> 
+	      		<input type="text" placeholder="Search.." name="item_name">
+	      		<button type="submit" ><i class="fa fa-search">Search</i></button>
+	    	</form>
+
+	    		</br>
+
+	    	<form method="get" action="/new_form">
+	    		<button >New Lost Form</button>
+	    	</form>
+	    </div>
+
+		<script>
+			$(function(){
+			  $("#nav-placeholder").load("/views/nav.html");
+			});
+		</script>
 		
-		<form method="post" action="/search_lost"> 
-      		<input type="text" placeholder="Search.." name="item_name">
-      		<button type="submit" ><i class="fa fa-search">Search</i></button>
-    	</form>
 
-    		</br>
-
-    	<form method="get" action="/new_form">
-    		<button >New Lost Form</button>
-    	</form>
 
 	</body>
 </html>

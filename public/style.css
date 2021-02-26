@@ -28,6 +28,7 @@
       outline:none;
       transition: all 0.5s;
       cursor: pointer;
+      user-select: none;
     }
 
     .menu-button:hover {
@@ -40,7 +41,8 @@
     #sidenav-menu {
       position: relative;
       left: 30px;
-      top: 10px;
+      top: 20px;
+      user-select: none;
     }
 
     .sidenav {
