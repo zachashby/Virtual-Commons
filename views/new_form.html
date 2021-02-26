@@ -18,9 +18,9 @@
 		
 		<form action = "/get_lost_data" method ="post" >
 
-			<h2>Item's name <input type="text" id="" d="item_name"> </h2>
+			<h2>Item's name <input type="text" id="item_name"> </h2>
 			<h2>Your name<input type="text" id="your_name"> </h2>
-			<h2>Email <input type="text" id="email"> </h2>
+			<h2>Email <input type="text" id="email_lost_found"> </h2>
 			<h2>Description<input type="text" id="description"> </h2>
 
 			<button type="submit" id="submit_lost_found">Submit</button>
@@ -36,10 +36,12 @@
 				var lost_item_data = {
 					item_name: $("#item_name").val(),
 					your_name: $("#your_name").val(),
-					email: $("#email").val(),
+					email: $("#email_lost_found").val(),
 					description: $("#description").val()
 
 				}
+
+				console.log(lost_item_data);
 
 				$.post("/get_lost_data", lost_item_data);
 

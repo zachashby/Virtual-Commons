@@ -3,17 +3,48 @@
 	
 	<head>
 		<title>Tutoring request and accept</title>
-	</head>
 
-	<body>
-		
-			<h2>Name <input type="text" name="student_name"></h2>
-			<h2>Grade <input type="text" name="student_grade"></h2>
-			<h2>Email <input type="text" name="email"></h2>
-			<h2>Subject<input type="text" name="subject"></h2>
+		<script
+		src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous">
+	</script>
+</head>
 
-			<button type="submit" >Request tutor</button>
+<body>
 
-	</body>
+	<h2>Name <input type="text" id="student_name"></h2>
+	<h2>Grade <input type="text" id="student_grade"></h2>
+	<h2>Email <input type="text" id="email_tutoring"></h2>
+	<h2>Course<input type="text" id="course"></h2>
+
+	<button type = "submit" id="submit_tutoring">Request tutor</button>
+
+
+	<script type="text/javascript">
+
+		$("#submit_tutoring").click(function(){
+
+			console.log("HEY");
+
+			var tutor_request_data = {
+				student_name: $("#student_name").val(),
+				student_grade: $("#student_grade").val(),
+				email: $("#email_tutoring").val(),
+				course: $("#course").val()
+
+			}
+
+			console.log(tutor_request_data);
+
+			$.post("/tutoring_request", tutor_request_data);
+
+			return false;
+
+		})
+
+	</script>
+
+</body>
 
 </hmtl>
