@@ -1,4 +1,10 @@
 const express = require('express');
+<<<<<<< HEAD
+const dotenv = require("dotenv").config();
+var bodyParser = require("body-parser");
+const { Deta } = require('deta');
+=======
+>>>>>>> f1d8cc72d754430a3c6cb41f76f1d4e4ae70993f
 var app = express()
 
 //import database from db.js
@@ -70,8 +76,12 @@ app.post('/tutoring_request', (req, res) => {
 
 });
 
-app.post('/get_lost_form', (req, res) => {
+app.post('/get_lost_data', (req, res) => {
+	// var lost_item_data = req.body
 
+	// console.log(req.body);
+
+	// res.send()
 	const item_name = req.body.item;
 	const name = req.body.name;
 	const grade = req.body.grade;
@@ -81,6 +91,10 @@ app.post('/get_lost_form', (req, res) => {
 	new_lost_form (req, item_name, name, grade, email, description);
 });
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0cf7bf49054ad99109173a40d89a3736a03bcf15
 app.listen(8000, function (){
 	console.log('Listening to PORT 8000');
 });
