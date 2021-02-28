@@ -1,23 +1,52 @@
-<div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <form method="get" action="/home"><button class="menu-button" id="Home-menu-button"><a>Home</a></button></form>
-      <form method="get" action="/news"><button class="menu-button" id="News-menu-button"><a>News</a></button></form>
-      <form method="get" action="/entertainment"><button class="menu-button" id="Activity-menu-button"><a>Activity</a></button></form>
-      <form method="get" action="/tutoring"><button  class="menu-button" id="Tutor-menu-button"><a>Tutoring</a></button></form>
-      <form method="get" action="/lost_found"><button  class="menu-button" id="lost_found-menu-button"><a>Lost & Found</a></button></form>
-</div>
-<span id="sidenav-menu" style="font-size:30px;cursor:pointer; margin-top:" onclick="openNav()">&#9776;</span>
+<span id="open-sidenav" onclick="openNav()">&#9776;</span>
 
-<script>
-	function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-        document.body.style.backgroundColor = "rgba(121,49,64,0.9)";
-      }
 
-   	function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
-        document.body.style.backgroundColor = "#793140";
-      }
-</script>
+ <div id="mySidenav" class="sidenav">
+ 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+ 		&times;
+ 	</a>
+
+ 	<form method="get" action="/home">
+ 		<button class="menu-button" id="Home-menu-button">
+ 			<a>Home</a>
+ 		</button>
+ 	</form>
+
+ 	<form method="get" action="/news">
+ 		<button class="menu-button" id="News-menu-button">
+ 			<a>News</a>
+ 		</button>
+ 	</form>
+
+ 	<form method="get" action="/entertainment">
+ 		<button class="menu-button" id="Activity-menu-button">
+ 			<a>Activity</a>
+ 		</button>
+ 	</form>
+
+ 	<form method="get" action="/tutoring">
+ 		<button  class="menu-button" id="Tutor-menu-button">
+ 			<a>Tutoring</a>
+ 		</button>
+ 	</form>
+
+ 	<form method="get" action="/lost_found">
+ 		<button  class="menu-button" id="lost_found-menu-button">
+ 			<a>Lost & Found</a>
+ 		</button>
+ 	</form>
+ </div>
+
+ <script>
+ 	function openNav() {
+ 		document.getElementById("mySidenav").style.width = "220px";
+ 		document.getElementById("main").style.marginLeft = "220px";
+		document.getElementById("main").style.filter = "blur(4px)"; 	
+	}
+
+ 	function closeNav() {
+ 		document.getElementById("mySidenav").style.width = "0px";
+ 		document.getElementById("main").style.marginLeft = "0px";
+ 		document.getElementById("main").style.filter = "blur(0px)";
+ 	}
+ </script>

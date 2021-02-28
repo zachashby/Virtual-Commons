@@ -1,24 +1,51 @@
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:wght@500);
 
+    html,
+    body {
+      height: 100%;
+    }
+
     body {
       font-family: 'Josefin Sans', serif;
       background-color: #793140;
       transition: background-color .5s;
-      color: white;4
+      color: white;
+      margin: 0px;
+      transition: filter .5s;
     }
 
     form {
       background-color: transparent;
-      border:none ;
+      border: none;
     }
 
     .main-title {
       position: relative;
-      text-align: center;
       font-size: 4.5em;
       font-weight: 800;
       cursor: pointer;
       user-select: none;
+      padding-left: 40px;
+      padding-right: 40px;
+      top: 40%;
+      translate: translateY(-50%);
+      margin:0px;
+    }
+
+    #main {
+      position: relative;
+      transition: margin-left .5s;
+      height: 100vh;
+      margin-left: 0px;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+
+    #nav-placeholder {
+      height:0;
     }
 
     .menu-button {
@@ -38,11 +65,14 @@
       cursor: pointer;
     }
 
-    #sidenav-menu {
+    #open-sidenav {
       position: relative;
       left: 30px;
       top: 20px;
       user-select: none;
+      font-size: 35px;
+      cursor: pointer;
+      z-index: 1;
     }
 
     .sidenav {
@@ -66,24 +96,22 @@
       color: #818181;
       display: block;
       transition: 0.3s;
-      max-width: 80px
+      max-width: 100px;
+      text-align: left;
     }
+
     .sidenav a:hover {
       color: #457e81;
     }
 
     .sidenav .closebtn {
       position: absolute;
-      top: 10px;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-}
-    #main {
-      transition: margin-left .5s;
-      padding: 16px;
+      top: 3px;
+      left: 10px;
+      font-size: 70px;
     }
 
+    
     @media screen and (max-height: 450px) {
       .sidenav {padding-top: 15px;}
       .sidenav a {font-size: 18px;}
