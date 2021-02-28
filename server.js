@@ -101,17 +101,7 @@ app.post('/get_lost_data', (req, res) => {
 	new_lost_form (req, item_name, name, grade, email, description);
 });
 
-      function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-        document.body.style.backgroundColor = "rgba(121,49,64,0.9)";
-      }
 
-      function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
-        document.body.style.backgroundColor = "#793140";
-      }
 
 app.listen(8000, function (){
 	console.log('Listening to PORT 8000');
