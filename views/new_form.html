@@ -1,46 +1,70 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		 <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous">
-    </script>
-    <link rel="stylesheet" href="/public/style.css" />
-	</head>
+<head>
+	<script
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous">
+</script>
+<link rel="stylesheet" href="/public/style.css" />
+</head>
 
-	<body>
+<body>
 
-		<form method='get' action='/'>
-			<button>Home</button>
-		</form>
+	<form method='get' action='/'>
+		<button>Home</button>
+	</form>
+
+	<form method="post" action="/get_lost_data">
+
+		<h2>Item's name <input type="text" name="item_name"> </h2>
+		<h2>Your name<input type="text" name="student_name"> </h2>
+
+
 		
-		<form method="post" action="/get_lost_data">
+		<label for="grade" style="font-weight:bold;font-size:26px">Your Grade</label>
+ 
+		<select name="grade" id="grade">
+			<option value="9">9th</option>
+			<option value="10">10th</option>
+			<option value="11">11th</option>
+			<option value="12">12th</option>
+		</select> 
 
-			<h2>Item's name <input type="text" name="item_name"> </h2>
-			<h2>Your name<input type="text" name="student_name"> </h2>
-      <h2>Your grade level<input type="text" name="grade"> </h2>
-			<h2>Email <input type="text" name="email"> </h2>
-			<h2>Description<input type="text" name="description"> </h2>
+	</br>
+	</br>
 
-			<button type="submit" >Submit</button>
+		<label for="category" style="font-weight:bold;font-size:26px">Item Category</label>
+ 
+		<select name="category" id="category">
+			<option value="all">All</option>
+			<option value="electronic-devices">Electronic Devices</option>
+			<option value="books">Books</option>
+			<option value="clothing">Clothing</option>
+			<option value="other">Other</option>
+		</select> 
 
-		</form>
+		<h2>Email <input type="text" name="email"> </h2>
+		<h2>Description<input type="text" name="description"> </h2>
 
-		<script type="text/javascript">
+		<button type="submit" >Submit</button>
 
-			$("#submit_lost_found").click(function(){
+	</form>
 
-				console.log("HEY");
+	<script type="text/javascript">
 
-				var lost_item_data = {
-					item_name: $("#item_name").val(),
-					your_name: $("#your_name").val(),
-					email: $("#email").val(),
-					description: $("#description").val()
+		$("#submit_lost_found").click(function(){
 
-				}
+			console.log("HEY");
+
+			var lost_item_data = {
+				item_name: $("#item_name").val(),
+				your_name: $("#your_name").val(),
+				email: $("#email").val(),
+				description: $("#description").val()
+
+			}
 
 				//$.post("/get_lost_data", lost_item_data);
 
@@ -52,7 +76,7 @@
 
 	</body>
 
-</html>
+	</html>
 
 
 <!-- <button class="btn btn-lg btn-primary" type="submit" id="submit" onclick="location.replace('/main')">Submit!</button>
