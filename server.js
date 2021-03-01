@@ -1,10 +1,15 @@
 const express = require('express');
+const { response } = require("express");
 const dotenv = require("dotenv").config();
 var bodyParser = require("body-parser");
 const { Deta } = require('deta');
 var app = express()
 
 //import database from db.js
+
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
 const { new_news, new_lost_form, new_tutoring, new_vid } = require("./db.js");
 
 app.use(express.static("."));
@@ -13,24 +18,9 @@ app.get('/', (req, res) => {
 	res.sendFile(`${__dirname}/views/index.html`);
 });
 
-app.get('/', (req, res) => {
-	res.sendFile(`${__dirname}/views/lost_found.html`);
-});
-
-app.post('/search_lost', (req, res) => {
-
-	const  item_name = req.body.item_name;
-
-	//database stuff 
-});
-
-
-app.get('/home',(req, res) => {
-
+app.get('/home', (req, res) => {
 	res.sendFile(`${__dirname}/views/index.html`);
-
 });
-
 
 app.get('/lost_found',(req, res) => {
 
@@ -64,13 +54,34 @@ app.get('/news', (req, res) => {
 
 });
 
+app.get('/upload_vid', (req, res) => {
+
+	res.sendFile(`${__dirname}/views/upload_vid.html`);
+
+});
+
+app.get('/posting_news', (req, res) => {
+
+	res.sendFile(`${__dirname}/views/posting_news.html`);
+
+});
+
 app.post('/new_news', (req, res) => {
 	
-	const news_title = req.body.news_title;
+	const news_title = req.body.newsTitle;
 	const image = req.body.image;
 	const writing = req.body.writing;
 
-	new_news (req, news_title, image, writing);
+	new_news (res, news_title, image, writing);
+});
+
+app.post('/new_vid', (req, res) => {
+
+	const title = req.body.vid_title;
+	const link = req.body.vid_link;
+
+	new_vid (res, title, link);
+
 });
 
 
@@ -82,7 +93,7 @@ app.post('/tutoring_request', (req, res) => {
 	const course = req.body.course;
 	const note = req.body.note;
 
-	new_tutoring ( req, name, grade, email, subject, note );
+	new_tutoring ( res, name, grade, email, course, note );
 
 });
 
@@ -92,13 +103,13 @@ app.post('/get_lost_data', (req, res) => {
 	// console.log(req.body);
 
 	// res.send()
-	const item_name = req.body.item;
-	const name = req.body.name;
+	const item_name = req.body.item_name;
+	const student_name = req.body.student_name;
 	const grade = req.body.grade;
 	const email = req.body.email;
 	const description = req.body.description;
 
-	new_lost_form (req, item_name, name, grade, email, description);
+	new_lost_form (res, item_name, student_name, grade, email, description);
 });
 
 

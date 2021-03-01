@@ -8,49 +8,50 @@ const deta = Deta(process.env.PROJECT_KEY);
 
 //-Connect / Create a database--
 const news_db = deta.Base('news_db');
+const lost_db = deta.Base('lost_db');
+const vid_db = deta.Base('vid_db');
+const tutoring_db = deta.Base('tutoring_db');
 //------------------------------
 
-const new_news = async (response, username, password) => {
+const new_news = async (response, title, linked_img, linked_writing) => {
     news_db.insert({
         title,
         linked_img,
-        linked_writing
-    }, username)
-        .then(() => response.redirect("/auth/login"))
+        linked_writing})
+        .then(() => response.redirect("/"))
         .catch(err => console.error(err));
+
 }
 
-const new_vid = async (response, username, password) => {
-    news_db.insert({
+const new_vid = async (response, title, vid_link) => {
+    vid_db.insert({
     	title,
         vid_link
-    }, username)
-        .then(() => response.redirect("/auth/login"))
+    })
+        .then(() => response.redirect("/"))
         .catch(err => console.error(err));
 }
 
 
-const new_lost_form = async (response, username, password) => {
-    news_db.insert({
-        item,
-        name,
+const new_lost_form = async (response, item_name, student_name, grade, email, description) => {
+    lost_db.insert({
+        item_name,
+        student_name,
         grade,
         email,
-        description
-    }, username)
-        .then(() => response.redirect("/auth/login"))
+        description})
+        .then(() => response.redirect("/"))
         .catch(err => console.error(err));
 }
 
-const new_tutoring = async (response, username, password) => {
-    news_db.insert({
+const new_tutoring = async (response, name, grade, email, subject, note) => {
+    tutoring_db.insert({
         name,
         grade,
         email,
         subject,
-        note
-    }, username)
-        .then(() => response.redirect("/auth/login"))
+        note})
+        .then(() => response.redirect("/"))
         .catch(err => console.error(err));
 }
 
