@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:wght@500);
+@import '~mdb-ui-kit/css/mdb.min.css';
 
     html,
     body {
@@ -115,4 +116,10 @@
     @media screen and (max-height: 450px) {
       .sidenav {padding-top: 15px;}
       .sidenav a {font-size: 18px;}
+    }
+
+    .input-group {
+      border: 1px;
+      align-content: center;
+      position: relative;
     }
