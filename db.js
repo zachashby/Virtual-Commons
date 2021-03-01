@@ -33,13 +33,13 @@ const new_vid = async (response, title, vid_link) => {
 }
 
 
-const new_lost_form = async (response, item_name, student_name, grade, email, description) => {
+const new_lost_form = async (response, description, student_name, grade, email, img) => {
     lost_db.insert({
-        item_name,
+        description,
         student_name,
         grade,
         email,
-        description})
+        img})
         .then(() => response.redirect("/"))
         .catch(err => console.error(err));
 }
@@ -53,6 +53,12 @@ const new_tutoring = async (response, name, grade, email, subject, note) => {
         note})
         .then(() => response.redirect("/"))
         .catch(err => console.error(err));
+}
+
+const get_lost_form = async () => {
+
+    
+
 }
 
 // export

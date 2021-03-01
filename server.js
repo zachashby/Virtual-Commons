@@ -66,6 +66,12 @@ app.get('/posting_news', (req, res) => {
 
 });
 
+app.get('/get_lost_form', (req, res) => {
+
+	
+
+});
+
 app.post('/new_news', (req, res) => {
 	
 	const news_title = req.body.newsTitle;
@@ -83,7 +89,6 @@ app.post('/new_vid', (req, res) => {
 	new_vid (res, title, link);
 
 });
-
 
 app.post('/tutoring_request', (req, res) => {
 
@@ -103,13 +108,13 @@ app.post('/get_lost_data', (req, res) => {
 	// console.log(req.body);
 
 	// res.send()
-	const item_name = req.body.item_name;
+	const description = req.body.description;
 	const student_name = req.body.student_name;
 	const grade = req.body.grade;
 	const email = req.body.email;
-	const description = req.body.description;
+	const img = req.body.img;
 
-	new_lost_form (res, item_name, student_name, grade, email, description);
+	new_lost_form (res, description, student_name, grade, email, img);
 });
 
 
