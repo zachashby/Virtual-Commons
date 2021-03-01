@@ -126,3 +126,8 @@
     .second-title h2 {
       padding-top:50px;
     }
+
+    .lost-form-container {
+      display: inline-block;
+      justify-content: center;
+    }
