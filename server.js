@@ -7,9 +7,14 @@ var app = express()
 //import database from db.js
 const { new_news, new_lost_form, new_tutoring, new_vid } = require("./db.js");
 
+app.use(express.static("."));
 
 app.get('/', (req, res) => {
 	res.sendFile(`${__dirname}/views/index.html`);
+});
+
+app.get('/', (req, res) => {
+	res.sendFile(`${__dirname}/views/lost_found.html`);
 });
 
 app.post('/search_lost', (req, res) => {
@@ -18,6 +23,14 @@ app.post('/search_lost', (req, res) => {
 
 	//database stuff 
 });
+
+
+app.get('/home',(req, res) => {
+
+	res.sendFile(`${__dirname}/views/index.html`);
+
+});
+
 
 app.get('/lost_found',(req, res) => {
 
@@ -87,6 +100,8 @@ app.post('/get_lost_data', (req, res) => {
 
 	new_lost_form (req, item_name, name, grade, email, description);
 });
+
+
 
 app.listen(8000, function (){
 	console.log('Listening to PORT 8000');

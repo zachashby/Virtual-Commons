@@ -1,75 +1,125 @@
-*{
-	background: black;
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:wght@500);
+@import '~mdb-ui-kit/css/mdb.min.css';
 
-	}
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Josefin Sans', serif;
+      background-color: #793140;
+      transition: background-color .5s;
+      color: white;
+      margin: 0px;
+      transition: filter .5s;
+    }
+
+    form {
+      background-color: transparent;
+      border: none;
+    }
+
+    .main-title {
+      position: relative;
+      font-size: 4.5em;
+      font-weight: 800;
+      cursor: pointer;
+      user-select: none;
+      padding-left: 40px;
+      padding-right: 40px;
+      top: 40%;
+      translate: translateY(-50%);
+      margin:0px;
+    }
+
+    #main {
+      position: relative;
+      transition: margin-left .5s;
+      height: 100vh;
+      margin-left: 0px;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
 
 
-body{
-		margin-top: 50px;
-		text-align: center;
-		font-family: "Lato", sans-serif;
-	}
+    #nav-placeholder {
+      height:0;
+    }
 
+    .menu-button {
+      position: relative;
+      background-color: transparent;
+      border: none;
+      outline:none;
+      transition: all 0.5s;
+      cursor: pointer;
+      user-select: none;
+    }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
+    .menu-button:hover {
+      -webkit-transform: translateX(20px);
+      transform: translateX(20px);
+      transition: all 0.25s ease; 
+      cursor: pointer;
+    }
 
-li {
-  float: left;
-}
+    #open-sidenav {
+      position: relative;
+      left: 30px;
+      top: 20px;
+      user-select: none;
+      font-size: 35px;
+      cursor: pointer;
+      z-index: 1;
+    }
 
-li button {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 80px;
+    }
 
-li a:hover {
-  background-color: #111;
-}
+    .sidenav a {
+      padding: 15px 8px 8px 30px;
+      text-decoration: none;
+      font-size: 28px;
+      font-weight: 500;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+      max-width: 100px;
+      text-align: left;
+    }
 
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
+    .sidenav a:hover {
+      color: #457e81;
+    }
 
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
+    .sidenav .closebtn {
+      position: absolute;
+      top: 3px;
+      left: 10px;
+      font-size: 70px;
+    }
 
-.sidenav a:hover {
-  color: #f1f1f1;
-}
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
 
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
+    .input-group {
+      border: 1px;
+      align-content: center;
+      position: relative;
+    }

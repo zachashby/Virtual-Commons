@@ -9,7 +9,27 @@
 	<video>
 		<source src="https://drive.google.com/uc?export=download&id=https://drive.google.com/file/d/1gOdUfG-TSbPUITPTtGkDDW3p80Vsr7Z7/view?usp=sharing" type='video/mp4'>
 		</video>
+	
+	<head>
+		<title>Musical Performances</title>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    
+    	<link rel="stylesheet" href="/public/style.css" />
+	</head>
 
+	<body>
+		<div id="nav-placeholder">
+		</div>
+
+	    <div id="main">
+			<video width="320" height="240" controls>
+			</video>
+		</div>
+
+		<script>
+			$(function(){
+        		$("#nav-placeholder").load("/views/nav.html");
+      		});
+		</script>
 	</body>
-
 	</html>
