@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<form method="get" action="/new_news">
+	<form method="get" action="/posting_news">
 		<button >Add News story</button>
 	</form>
 
@@ -31,9 +31,14 @@
 
 			$.get("/return_news", function(data){
 
-				document.getElementById("main").innerHTML += data.title;
-				document.getElementById("main").innerHTML += "</br>";
-				document.getElementById("main").innerHTML += data.linked_writing;
+				for (let i=0; i< data.length; i++){
+
+					document.getElementById("main").innerHTML += data[i].title;
+					document.getElementById("main").innerHTML += "</br>";
+					document.getElementById("main").innerHTML += data[i].linked_writing;
+					document.getElementById("main").innerHTML += "</br>";
+
+				}	
 
 			});
 
