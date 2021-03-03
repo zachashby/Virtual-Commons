@@ -10,24 +10,36 @@
 </head>
 
 <body>
-	<form method="get" action="/new_news">
-		<button >New Lost Form</button>
-	</form>
 
-	<video>
-		<source src="https://drive.google.com/uc?export=download&id=https://drive.google.com/file/d/1gOdUfG-TSbPUITPTtGkDDW3p80Vsr7Z7/view?usp=sharing" type='video/mp4'>
-	</video>
 
 	<div id="nav-placeholder">
 	</div>
 
-	<div id="main">
-		<div style="background-color:blue; width:500px; height:500px;"></div>
+	<form method="get" action="/posting_news">
+		<button>POST NEWS</button>
+	</form>
+
+	<button onclick="getData()">Update</button>
+
+	<div id="lost_items">
+
+		<iframe src="https://drive.google.com/file/d/1ToKJ7Z34Xe-SecUJwckzoNsZRO3BSnZB/preview" width="640" height="480"></iframe>
+
+
 	</div>
+
 	<script>
 			$(function(){
         		$("#nav-placeholder").load("/views/nav.html");
       		});
+
+			function getData(){
+			$.get("/return_news", function(news){
+				document.getElementById("lost_items").innerHTML += news.title;
+				document.getElementById("lost_items").innerHTML += news.linked_writing;
+			});
+			}
+
 	</script>
 
 </body>

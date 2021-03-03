@@ -63,7 +63,7 @@ const return_news = async () => {
 
     //console.log("HERE = ", all_forms.value[0].title);
 
-    return all_forms.value[0];   
+    return (all_forms.value);   
 
 }
 
