@@ -12,9 +12,9 @@
 		<div id="nav-placeholder"></div>
 
 	    <div id="main">
-	    	<h2 class="Second-title"> Lost & Found </h2>
+	    	<h2 class="second-title"> Lost & Found </h2>
 
-	    	<form method="post" action="/search_lost" class="input-group" align="center">
+	    	<form method="post" action="/search_lost" class="input-group">
 			  <div class="form-outline">
 			    <input type="search" id="form1" class="form-control input" name="item_name"/>
 			    <label class="form-label" for="form1">Search</label>
@@ -27,7 +27,10 @@
 	    	</br>
 
 	    	<form method="get" action="/new_form">
-	    		<button class="btn btn-secondary">New Lost Form</button>
+	    		<button class="btn btn-secondary">I lost something &#128549;</button>
+	    	</form>
+	    	<form method="get" action="/new_found_form">
+	    		<button class="btn btn-secondary">I found somethign &#128513;</button>
 	    	</form>
 
 	    	<div class="container">
@@ -36,14 +39,14 @@
             			<h1 class="gallery-title">Lost Items</h1>
         			</div>
 
-        		<div class="filter-button">
-		            <button class="btn btn-info filter-button" data-filter="all">All</button>
-		            <button class="btn btn-info filter-button" data-filter="elctronics">Electronic Devices</button>
-		            <button class="btn btn-info filter-button" data-filter="books">Books</button>
-		            <button class="btn btn-info filter-button" data-filter="clothing">Clothing</button>
-		            <button class="btn btn-info filter-button" data-filter="others">Others</button>
-        		</div>
-        		<br/>
+	        		<div class="filter-button">
+			            <button class="btn btn-info filter-button" data-filter="all">All</button>
+			            <button class="btn btn-info filter-button" data-filter="elctronics">Electronic Devices</button>
+			            <button class="btn btn-info filter-button" data-filter="books">Books</button>
+			            <button class="btn btn-info filter-button" data-filter="clothing">Clothing</button>
+			            <button class="btn btn-info filter-button" data-filter="others">Others</button>
+	        		</div>
+	        		<br/>
 
         		<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
                 	<img src="http://fakeimg.pl/365x365/" class="img-responsive">

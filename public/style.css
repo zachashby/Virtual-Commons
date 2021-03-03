@@ -1,9 +1,46 @@
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:wght@500);
-@import '~mdb-ui-kit/css/mdb.min.css';
+
+
+:root {
+
+    --main-color: #793140;
+    --secondary-color: #457e81;
+
+    --input-color: black;
+    --input-border: black;
+    --input-background: #fff;
+    --input-placeholder: #ababab;
+    --input-border-focus: pink;
+    --group-color: var(--input-color);
+    --group-border: var(--input-border);
+    --group-background: #a8a8a8;
+    --group-color-focus: #fff;
+    --group-border-focus: var(--input-border-focus);
+    --group-background-focus: #457e81;
+
+}
+
+
+* {
+    box-sizing: inherit;
+    &:before,
+    &:after {
+        box-sizing: inherit;
+    }
+}
+
+html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
 
     html,
     body {
       height: 100%;
+      display: flex;
+      justify-content: center;
+    align-items: center;
+    flex-direction: column;
     }
 
     body {
@@ -13,6 +50,7 @@
       color: white;
       margin: 0px;
       transition: filter .5s;
+      
     }
 
     form {
@@ -67,7 +105,7 @@
     }
 
     #open-sidenav {
-      position: relative;
+      position: fixed;
       left: 30px;
       top: 20px;
       user-select: none;
@@ -80,13 +118,14 @@
       height: 100%;
       width: 0;
       position: fixed;
-      z-index: 1;
+      z-index: 2;
       top: 0;
       left: 0;
       background-color: #111;
       overflow-x: hidden;
       transition: 0.5s;
       padding-top: 80px;
+      color: white;
     }
 
     .sidenav a {
@@ -97,7 +136,7 @@
       color: #818181;
       display: block;
       transition: 0.3s;
-      max-width: 100px;
+      max-width: 150px;
       text-align: left;
     }
 
@@ -119,7 +158,135 @@
     }
 
     .input-group {
-      border: 1px;
-      align-content: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    h2.second-title {
       position: relative;
+      padding:50px;
+      font-size: 40px;
+    }
+
+    .lost-form-container {
+      display: inline-block;
+      justify-content: center;
+    }
+
+    .form-btn-group {
+      font-size: 40px;
+      color: #c2c2c2;
+      text-align: left;
+      margin-bottom: 40px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--secondary-color);
+      width: auto;
+    }
+
+    .form-btn-group .btn{
+      font-size: 20px;
+      color: #c2c2c2;
+    }
+
+    .form-check-label {
+      font-size: 30px;
+    }
+
+    input#inlineRadio.form-check-input {
+      border:0px;
+      width:25px;
+      height:25px;
+      margin-left:0px;
+      margin-right:10px;
+    }
+
+    div.form-check.form-check-inline {
+      padding: 0;
+    }
+
+    input,span,label,{
+      display: block;
+      margin: 10px;
+      padding: 5px;
+      border: none;
+    }
+
+    input {
+      font-size: 12px;
+      color: white;
+    }
+
+    input:focus {
+      outline: 0;
+    }
+
+    input.question {
+      font-size: 40px;
+      font-weight: 200;
+      border-radius: 10px;
+      margin: 0;
+      border: none;
+      width: 80%;
+      background: transparent;
+      transition: padding-top 0.2s ease, margin-top 0.2s ease;
+      overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+    }
+
+
+    input.question + label {
+      display: block;
+      position: relative;
+      white-space: nowrap;
+      padding: 0;
+      margin-bottom: 50px;
+      width: 10%;
+      border-top: 3px solid var(--secondary-color);
+      -webkit-transition: width 0.4s ease;
+      transition: width 0.4s ease;
+      height: 0px;
+    }
+
+    input.question:focus + label {
+      width: 80%;
+    }
+
+    input.question:focus,
+    input.question:valid {
+      padding-top: 35px;
+    }
+
+    input.question:focus + label > span,
+    input.question:valid + label > span {
+      top: -100px;
+      font-size: 22px;
+      color: white;
+    }
+
+    input.question:valid + label {
+      border-color: #478145;
+    }
+
+    input.question + label > span {
+      font-weight: 300;
+      margin: 0;
+      position: absolute;
+      color: #c2c2c2;
+      font-size: 40px;
+      top: -66px;
+      left: 0px;
+      z-index: -1;
+      -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+      transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+    }
+
+    @-webkit-keyframes appear {
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes appear {
+      100% {
+        opacity: 1;
+      }
     }
