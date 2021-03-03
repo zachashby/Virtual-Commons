@@ -48,10 +48,6 @@
 			</div>
 			<br/>
 
-			<br/>
-
-			<button onclick="getData()">UPDATE</button>
-
 	        	<!--
         		<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
                 	<img src="http://fakeimg.pl/365x365/" class="img-responsive">
@@ -123,10 +119,17 @@
 	});
 
 	$.get("/return_lost_form", function(data){
+		for (let i=0; i< data.length; i++){
 
-		document.getElementById("main").innerHTML += data.title;
-		document.getElementById("main").innerHTML += "</br>";
-		document.getElementById("main").innerHTML += data.linked_writing;
+			document.getElementById("main").innerHTML += data[i].description;
+			document.getElementById("main").innerHTML += "</br>";
+			document.getElementById("main").innerHTML += data[i].student_name;
+			document.getElementById("main").innerHTML += "</br>";
+			document.getElementById("main").innerHTML += data[i].grade;
+			document.getElementById("main").innerHTML += "</br>";
+			document.getElementById("main").innerHTML += data[i].email;
+
+		}	
 
 	});
 
