@@ -115,12 +115,14 @@ app.post('/get_lost_data', (req, res) => {
 
 	// res.send()
 	const description = req.body.description;
-	const student_name = req.body.student_name;
-	const grade = req.body.grade;
+	const location = req.body.location;
+	const categories = req.body.btnradio;
+	const student_name = req.body.name;
+	const grade = req.body.inlineRadioOptions;
 	const email = req.body.email;
 	const img = req.body.img;
 
-	new_lost_form (res, description, student_name, grade, email, img);
+	new_lost_form (res, description, location, categories, student_name, grade, email, img);
 });
 
 app.get('/return_news', (req, res) => {
