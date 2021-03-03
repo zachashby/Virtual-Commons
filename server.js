@@ -13,6 +13,7 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 const { new_news, new_lost_form, new_tutoring, new_vid, return_news, return_lost_form } = require("./db.js");
 
 app.use(express.static("."));
+app.engine('html', mustacheExpress());
 
 app.get('/', (req, res) => {
 	res.sendFile(`${__dirname}/views/index.html`);
@@ -24,7 +25,7 @@ app.get('/home', (req, res) => {
 
 app.get('/lost_found',(req, res) => {
 
-	res.sendFile(`${__dirname}/views/lost_found.html`);
+	res.render(`${__dirname}/views/lost_found.html`, {lost_found_data:lost_found_data});
 
 });
 
