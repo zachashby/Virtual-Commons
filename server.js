@@ -28,7 +28,7 @@ app.get('/lost_found',(req, res) => {
 	//connection.query("SELECT name, bio, grade FROM user_info;", function(err, lost_found_data){
     //res.render(`${__dirname}/views/lost_found.html`), {data:data});
 
-	res.render(`${__dirname}/views/lost_found.html`, {data:lost_found_data});
+	res.render(`${__dirname}/views/lost_found.html`, {lost_found_data:lost_found_data});
 
 	//});
 
