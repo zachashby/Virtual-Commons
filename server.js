@@ -10,7 +10,7 @@ var app = express()
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
-const { new_news, new_lost_form, new_tutoring, new_vid, return_news } = require("./db.js");
+const { new_news, new_lost_form, new_tutoring, new_vid, return_news, return_lost_form } = require("./db.js");
 
 app.use(express.static("."));
 
@@ -132,8 +132,18 @@ app.get('/return_news', (req, res) => {
 		res.send(data[0]);
 	});
 
+});
+
+app.get('/return_lost_form', (req, res) => {
+
+	let returned = return_lost_form();
+
+	returned.then(function(data){
+		res.send(data);
+	});
 
 });
+
 
 
 
