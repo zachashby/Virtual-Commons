@@ -175,7 +175,7 @@ html {
 
     .form-btn-group {
       font-size: 40px;
-      color: grey;
+      color: #c2c2c2;
       text-align: left;
       margin-bottom: 40px;
       padding-bottom: 10px;
@@ -185,7 +185,7 @@ html {
 
     .form-btn-group .btn{
       font-size: 20px;
-      color: grey;
+      color: #c2c2c2;
     }
 
     .form-check-label {
@@ -270,7 +270,7 @@ html {
       font-weight: 300;
       margin: 0;
       position: absolute;
-      color: grey;
+      color: #c2c2c2;
       font-size: 40px;
       top: -66px;
       left: 0px;
