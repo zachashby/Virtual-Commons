@@ -62,8 +62,9 @@ const return_news = async () => {
     let all_forms = await news_db.fetch().next();
 
     //console.log("HERE = ", all_forms.value[0].title);
+    console.log(all_forms.value[0]);
 
-    return (all_forms.value);   
+    return (all_forms.value[0]);   
 
 }
 

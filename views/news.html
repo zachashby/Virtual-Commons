@@ -14,20 +14,29 @@
 		<button >Add News story</button>
 	</form>
 
-	<video>
-		<source src="https://drive.google.com/uc?export=download&id=https://drive.google.com/file/d/1gOdUfG-TSbPUITPTtGkDDW3p80Vsr7Z7/view?usp=sharing" type='video/mp4'>
-	</video>
+	<button onclick="getData()">UPDATE</button>
+
 
 	<div id="nav-placeholder">
 	</div>
 
 	<div id="main">
-		<div style="background-color:blue; width:500px; height:500px;"></div>
+		
 	</div>
+
 	<script>
 			$(function(){
         		$("#nav-placeholder").load("/views/nav.html");
       		});
+
+			$.get("/return_news", function(data){
+
+				document.getElementById("main").innerHTML += data.title;
+				document.getElementById("main").innerHTML += "</br>";
+				document.getElementById("main").innerHTML += data.linked_writing;
+
+			});
+
 	</script>
 
 </body>

@@ -128,8 +128,11 @@ app.get('/return_news', (req, res) => {
 
 	let returned = return_news();
 
+
 	returned.then(function(data){
-		res.send(data[0]);
+
+		console.log(data);
+		res.send(data);
 	});
 
 });
