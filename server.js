@@ -42,6 +42,12 @@ app.get('/new_form', (req, res) => {
 
 });
 
+app.get('/new_found_form', (req, res) => {
+
+	res.sendFile(`${__dirname}/views/new_found_form.html`);
+
+});
+
 app.get('/tutoring',(req, res) => {
 
 	res.sendFile(`${__dirname}/views/tutoring.html`);
