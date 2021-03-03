@@ -33,9 +33,11 @@ const new_vid = async (response, title, vid_link) => {
 }
 
 
-const new_lost_form = async (response, description, student_name, grade, email, img) => {
+const new_lost_form = async (response, description, location, categories, student_name, grade, email, img) => {
     lost_db.insert({
         description,
+        location,
+        categories,
         student_name,
         grade,
         email,
@@ -55,9 +57,13 @@ const new_tutoring = async (response, name, grade, email, subject, note) => {
         .catch(err => console.error(err));
 }
 
-const get_lost_form = async () => {
+const return_news = async () => {
 
-    
+    let all_forms = await news_db.fetch().next();
+
+    //console.log("HERE = ", all_forms.value[0].title);
+
+    return all_forms.value[0];   
 
 }
 
@@ -66,6 +72,7 @@ module.exports = {
     new_news,
     new_lost_form,
     new_tutoring,
-    new_vid
+    new_vid,
+    return_news
 }
 
