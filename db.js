@@ -67,12 +67,21 @@ const return_news = async () => {
 
 }
 
+const return_lost_form = async () => {
+
+    let all_forms = await lost_db.fetch().next();
+
+    return (all_forms.value);
+
+}
+
 // export
 module.exports = {
     new_news,
     new_lost_form,
     new_tutoring,
     new_vid,
-    return_news
+    return_news,
+    return_lost_form
 }
 

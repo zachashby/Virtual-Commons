@@ -10,7 +10,7 @@ var app = express()
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
-const { new_news, new_lost_form, new_tutoring, new_vid, return_news } = require("./db.js");
+const { new_news, new_lost_form, new_tutoring, new_vid, return_news, return_lost_form } = require("./db.js");
 
 app.use(express.static("."));
 app.engine('html', mustacheExpress());
@@ -25,12 +25,7 @@ app.get('/home', (req, res) => {
 
 app.get('/lost_found',(req, res) => {
 
-	//connection.query("SELECT name, bio, grade FROM user_info;", function(err, lost_found_data){
-    //res.render(`${__dirname}/views/lost_found.html`), {data:data});
-
 	res.render(`${__dirname}/views/lost_found.html`, {lost_found_data:lost_found_data});
-
-	//});
 
 });
 
@@ -138,8 +133,18 @@ app.get('/return_news', (req, res) => {
 		res.send(data[0]);
 	});
 
+});
+
+app.get('/return_lost_form', (req, res) => {
+
+	let returned = return_lost_form();
+
+	returned.then(function(data){
+		res.send(data);
+	});
 
 });
+
 
 
 
