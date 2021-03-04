@@ -119,6 +119,8 @@
 	});
 
 	$.get("/return_lost_form", function(data){
+
+		console.log(data);
 		for (let i=0; i< data.length; i++){
 
 			document.getElementById("main").innerHTML += data[i].description;
