@@ -16,7 +16,6 @@
 <body>
 	<div id="nav-placeholder"></div>
 
-	<div id="chat-placeholder"></div>
 
 	<div id="main">
 		<h2 class="second-title"> Lost & Found </h2>
@@ -30,6 +29,8 @@
 
 		</br>
 
+	
+
 		<div>
 			<form method="get" action="/new_form">
 				<button class="btn btn-secondary">I lost something &#128549;</button>
@@ -37,6 +38,9 @@
 			<form method="get" action="/new_found_form">
 				<button class="btn btn-secondary">I found somethign &#128513;</button>
 			</form>
+
+			<button onclick="run()">Update &#128513;</button>
+
 		</div>
 
 		<div class="container">
@@ -53,63 +57,34 @@
 					<button class="btn btn-info filter-button" data-filter="others">Others</button>
 				</div>
 				<br/>
-		        	<!--
-	        		<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-	                	<img src="http://fakeimg.pl/365x365/" class="img-responsive">
-	            	</div>
-
-		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
-		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-		            </div>
-
-		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-		            </div>
-
-		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
-		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-		            </div>
-
-		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
-		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-		            </div>
-
-		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
-		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-		            </div>
-
-		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
-		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-		            </div>
-
-		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
-		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-		            </div>
-
-		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
-		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-		            </div>
-
-		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-		            </div>
-
-		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
-		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-		            </div>
-
-		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
-		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-		            </div>
-		        -->
 
 		    </div>
 		</div>
 	</div>
 
+	<div id="main1"></div>
+
 <script>
 	$(function(){$("#nav-placeholder").load("/views/nav.html");});
 	$(function(){$("#chat-placeholder").load("/views/chat.html");});
+
+
+	$.get("/return_lost_form", function(data){
+
+		
+		for (let i=0; i< data.length; i++){
+
+			document.getElementById("main1").innerHTML += data[i].description;
+			document.getElementById("main1").innerHTML += "</br>";
+			document.getElementById("main1").innerHTML += data[i].student_name;
+			document.getElementById("main1").innerHTML += "</br>";
+			document.getElementById("main1").innerHTML += data[i].grade;
+			document.getElementById("main1").innerHTML += "</br>";
+			document.getElementById("main1").innerHTML += data[i].email;
+
+		}	
+
+	});
 
 	const searchButton = document.getElementById('search-button');
 	const searchInput = document.getElementById('search-input');
@@ -120,24 +95,6 @@
 
 	$(function(){
 		$("#nav-placeholder").load("/views/nav.html");
-	});
-
-	$.get("/return_lost_form", function(data){
-
-		console.log(data);
-		
-		for (let i=0; i< data.length; i++){
-
-			document.getElementById("main").innerHTML += data[i].description;
-			document.getElementById("main").innerHTML += "</br>";
-			document.getElementById("main").innerHTML += data[i].student_name;
-			document.getElementById("main").innerHTML += "</br>";
-			document.getElementById("main").innerHTML += data[i].grade;
-			document.getElementById("main").innerHTML += "</br>";
-			document.getElementById("main").innerHTML += data[i].email;
-
-		}	
-
 	});
 
 

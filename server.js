@@ -133,7 +133,6 @@ app.get('/return_news', (req, res) => {
 
 	returned.then(function(data){
 
-		console.log(data);
 		res.send(data);
 	});
 
@@ -144,12 +143,11 @@ app.get('/return_lost_form', (req, res) => {
 	let returned = return_lost_form();
 
 	returned.then(function(data){
+		console.log(data);
 		res.send(data);
 	});
 
 });
-
-
 
 
 app.listen(8000, function (){
