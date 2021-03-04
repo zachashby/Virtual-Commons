@@ -10,24 +10,21 @@
 </head>
 
 <body>
-	<form method="get" action="/posting_news">
-		<button >Add News story</button>
-	</form>
-
-	<button onclick="getData()">UPDATE</button>
-
-
-	<div id="nav-placeholder">
-	</div>
+	
+	<div id="nav-placeholder"></div>
+	<div id="chat-placeholder"></div>
 
 	<div id="main">
-		
+		<form method="get" action="/posting_news">
+			<button >Add News story</button>
+		</form>
+
+		<button onclick="getData()">UPDATE</button>
 	</div>
 
 	<script>
-			$(function(){
-        		$("#nav-placeholder").load("/views/nav.html");
-      		});
+			$(function(){$("#nav-placeholder").load("/views/nav.html");});
+			$(function(){$("#chat-placeholder").load("/views/chat.html");});
 
 			$.get("/return_news", function(data){
 

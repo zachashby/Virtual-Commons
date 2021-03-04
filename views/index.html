@@ -16,21 +16,22 @@
     <div id="nav-placeholder">
     </div>
 
+    <div id="chat-placeholder">
+    </div>
+
     <div id="main">
       <h2 class="main-title"> Virtual Commons </h2>
     </div>
 
     <script>  
-    $('.main-title').on('click', function() {
-      $(this).addClass('animated rubberBand').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-        $(this).removeClass('animated rubberBand');
+      $('.main-title').on('click', function() {
+        $(this).addClass('animated rubberBand').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+          $(this).removeClass('animated rubberBand');
+        });
       });
-    });
 
-    $(function(){
-        $("#nav-placeholder").load("/views/nav.html");
-      });
-    
+      $(function(){$("#nav-placeholder").load("/views/nav.html");});
+      $(function(){$("#chat-placeholder").load("/views/chat.html");});
   </script>
 
 	</body>

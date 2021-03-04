@@ -8,7 +8,7 @@
 <body>
 	<video>
 		<source src="https://drive.google.com/uc?export=download&id=https://drive.google.com/file/d/1gOdUfG-TSbPUITPTtGkDDW3p80Vsr7Z7/view?usp=sharing" type='video/mp4'>
-		</video>
+	</video>
 	
 	<head>
 		<title>Musical Performances</title>
@@ -17,23 +17,26 @@
     	<link rel="stylesheet" href="/public/style.css" />
 	</head>
 
+
 	<body>
-		<div id="nav-placeholder">
-		</div>
+		<div id="nav-placeholder"></div>
+    	<div id="chat-placeholder"></div>
+    
 
 	    <div id="main">
 			<video width="320" height="240" controls>
 			</video>
+
+			<form method="get" action="/upload_vid">
+				<button>Upload</button>
+			</form>
 		</div>	
 
-		<form method="get" action="/upload_vid">
-			<button>Upload</button>
-		</form>
+		
 
 		<script>
-			$(function(){
-        		$("#nav-placeholder").load("/views/nav.html");
-      		});
+			$(function(){$("#nav-placeholder").load("/views/nav.html");});
+      		$(function(){$("#chat-placeholder").load("/views/chat.html");});
 		</script>
 	</body>
 	</html>

@@ -7,26 +7,19 @@
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
 
-    <link 
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"rel="stylesheet" 
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" 
-      crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/public/bootstrap.css"/>
 
-    <link 
-      rel="stylesheet" 
-      href="/public/style.css"/>
+    <link rel="stylesheet" href="/public/style.css"/>
   </head>
-
 
 
 	<body>
 
-    <div id="nav-placeholder">
-    </div>
+    <div id="nav-placeholder"></div>
+    <div id="chat-placeholder"></div>
 
-
+    
     <div id="main">
-
 
       <div>
         <h2 class="second-title"> New Lost Form </h2>
@@ -41,7 +34,7 @@
         <label for="location"><span>Where you might've lost it?</span></label>
         
 
-        <h2 class="form-btn-group">Category</h2>
+        <h2 class="form-btn-group">Category
           <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
             <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
             <label value="Electronic Devices" class="btn btn-outline-light" for="btnradio1">Electronic Devices</label>
@@ -127,9 +120,8 @@
 
 			})
 
-      $(function(){
-        $("#nav-placeholder").load("/views/nav.html");
-      });
+      $(function(){$("#nav-placeholder").load("/views/nav.html");});
+      $(function(){$("#chat-placeholder").load("/views/chat.html");});
 
 		</script>
 

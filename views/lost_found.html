@@ -3,109 +3,114 @@
 <head>
 	<title>Lost and Found</title>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet"/>
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link 
+      rel="stylesheet" 
+      href="/public/bootstrap.css"/>
+
 	<link rel="stylesheet" href="/public/style.css" />
+
 </head>
 
 <body>
 	<div id="nav-placeholder"></div>
 
+	<div id="chat-placeholder"></div>
+
 	<div id="main">
 		<h2 class="second-title"> Lost & Found </h2>
 
-		<form method="post" action="/search_lost" class="input-group">
-			<div class="form-outline">
-				<input type="search" id="form1" class="form-control input" name="item_name"/>
-				<label class="form-label" for="form1">Search</label>
-			</div>
+		<form method="post" action="/search_lost" class="input-group" width="300px">
+			<input type="search" id="form1" class="form-control input" name="item_name" background-color="#FFF"/ placeholder="Search">
 			<button type="submit" class="btn btn-primary">
 				<i class="fa fa-search"></i>
 			</button>
 		</form>
 
-	</br>
+		</br>
 
-	<form method="get" action="/new_form">
-		<button class="btn btn-secondary">I lost something &#128549;</button>
-	</form>
-	<form method="get" action="/new_found_form">
-		<button class="btn btn-secondary">I found somethign &#128513;</button>
-	</form>
+		<div>
+			<form method="get" action="/new_form">
+				<button class="btn btn-secondary">I lost something &#128549;</button>
+			</form>
+			<form method="get" action="/new_found_form">
+				<button class="btn btn-secondary">I found somethign &#128513;</button>
+			</form>
+		</div>
 
-	<div class="container">
-		<div class="row">
-			<div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<h1 class="gallery-title">Lost Items</h1>
-			</div>
+		<div class="container">
+			<div class="row">
+				<div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<h1 class="gallery-title">Lost Items</h1>
+				</div>
 
-			<div class="filter-button">
-				<button class="btn btn-info filter-button" data-filter="all">All</button>
-				<button class="btn btn-info filter-button" data-filter="elctronics">Electronic Devices</button>
-				<button class="btn btn-info filter-button" data-filter="books">Books</button>
-				<button class="btn btn-info filter-button" data-filter="clothing">Clothing</button>
-				<button class="btn btn-info filter-button" data-filter="others">Others</button>
-			</div>
-			<br/>
+				<div class="filter-button">
+					<button class="btn btn-info filter-button" data-filter="all">All</button>
+					<button class="btn btn-info filter-button" data-filter="elctronics">Electronic Devices</button>
+					<button class="btn btn-info filter-button" data-filter="books">Books</button>
+					<button class="btn btn-info filter-button" data-filter="clothing">Clothing</button>
+					<button class="btn btn-info filter-button" data-filter="others">Others</button>
+				</div>
+				<br/>
 
-	        	<!--
-        		<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-                	<img src="http://fakeimg.pl/365x365/" class="img-responsive">
-            	</div>
+		        	<!--
+	        		<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+	                	<img src="http://fakeimg.pl/365x365/" class="img-responsive">
+	            	</div>
 
-	            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
-	                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-	            </div>
+		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+		            </div>
 
-	            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-	                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-	            </div>
+		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+		            </div>
 
-	            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
-	                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-	            </div>
+		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+		            </div>
 
-	            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
-	                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-	            </div>
+		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+		            </div>
 
-	            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
-	                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-	            </div>
+		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+		            </div>
 
-	            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
-	                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-	            </div>
+		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+		            </div>
 
-	            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
-	                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-	            </div>
+		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+		            </div>
 
-	            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
-	                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-	            </div>
+		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+		            </div>
 
-	            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-	                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-	            </div>
+		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+		            </div>
 
-	            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
-	                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-	            </div>
+		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+		            </div>
 
-	            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
-	                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-	            </div>
-	        -->
+		            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+		                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+		            </div>
+		        -->
 
-	    </div>
+		    </div>
+		</div>
 	</div>
-</div>
 
 <script>
-	$(function(){
-		$("#nav-placeholder").load("/views/nav.html");
-	});
+	$(function(){$("#nav-placeholder").load("/views/nav.html");});
+	$(function(){$("#chat-placeholder").load("/views/chat.html");});
 
 	const searchButton = document.getElementById('search-button');
 	const searchInput = document.getElementById('search-input');
