@@ -17,33 +17,30 @@
     --group-color-focus: #fff;
     --group-border-focus: var(--input-border-focus);
     --group-background-focus: #457e81;
-
 }
 
 
 * {
     box-sizing: inherit;
-    &:before,
-    &:after {
-        box-sizing: inherit;
-    }
 }
+
 
 html {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
 }
 
-    html,
-    body {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    }
+html,
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-    body {
+    
+body {
       font-family: 'Josefin Sans', serif;
       background-color: #793140;
       transition: background-color .5s;
@@ -53,10 +50,28 @@ html {
       
     }
 
-    form {
-      background-color: transparent;
-      border: none;
-    }
+body {
+  background: linear-gradient(-30deg, #793140, #c93870, #457e81, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+form {
+  background-color: transparent;
+  border: none;
+}
 
     .main-title {
       position: relative;
@@ -87,7 +102,7 @@ html {
       height:0;
     }
 
-    .menu-button {
+    .nav-menu-button {
       position: relative;
       background-color: transparent;
       border: none;
@@ -95,16 +110,18 @@ html {
       transition: all 0.5s;
       cursor: pointer;
       user-select: none;
+      color: #818181;
+      font-family: 'Josefin Sans', serif;
     }
 
-    .menu-button:hover {
+    .nav-menu-button:hover {
       -webkit-transform: translateX(20px);
       transform: translateX(20px);
       transition: all 0.25s ease; 
       cursor: pointer;
     }
 
-    #open-sidenav {
+    #open-sidenavv {
       position: fixed;
       left: 30px;
       top: 20px;
@@ -114,7 +131,7 @@ html {
       z-index: 1;
     }
 
-    .sidenav {
+    .sidenavv {
       height: 100%;
       width: 0;
       position: fixed;
@@ -125,26 +142,26 @@ html {
       overflow-x: hidden;
       transition: 0.5s;
       padding-top: 80px;
-      color: white;
+      color: inherit;
     }
 
-    .sidenav a {
+    .sidenavv a {
       padding: 15px 8px 8px 30px;
       text-decoration: none;
       font-size: 28px;
       font-weight: 500;
-      color: #818181;
+      color: inherit;
       display: block;
       transition: 0.3s;
       max-width: 150px;
       text-align: left;
     }
 
-    .sidenav a:hover {
+    .sidenavv a:hover {
       color: #457e81;
     }
 
-    .sidenav .closebtn {
+    .sidenavv .closebtn {
       position: absolute;
       top: 3px;
       left: 10px;
@@ -153,8 +170,8 @@ html {
 
     
     @media screen and (max-height: 450px) {
-      .sidenav {padding-top: 15px;}
-      .sidenav a {font-size: 18px;}
+      .sidenavv {padding-top: 15px;}
+      .sidenavv a {font-size: 18px;}
     }
 
     .input-group {
