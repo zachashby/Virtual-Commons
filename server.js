@@ -4,6 +4,9 @@ const dotenv = require("dotenv").config();
 var bodyParser = require("body-parser");
 const { Deta } = require('deta');
 var app = express()
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+
 
 //import database from db.js
 
@@ -150,6 +153,24 @@ app.get('/return_lost_form', (req, res) => {
 });
 
 
-app.listen(8000, function (){
+
+
+//CHAT FUNCTION
+
+io.on('connection', (socket) => {
+  console.log('a user connected');
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+});
+
+io.on('connection', (socket) => {
+  socket.on('chat message', (msg) => {
+    console.log('message: ' + msg);
+  });
+});
+
+
+http.listen(8000, function (){
 	console.log('Listening to PORT 8000');
 });
