@@ -7,26 +7,18 @@
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
 
-    <link 
-      rel="stylesheet" 
-      href="/public/bootstrap.css"/>
+    <link rel="stylesheet" href="/public/bootstrap.css"/>
 
-    <link 
-      rel="stylesheet" 
-      href="/public/style.css"/>
+    <link rel="stylesheet" href="/public/style.css"/>
   </head>
-
 
 
 	<body>
 
-
-    <div id="nav-placeholder">
-    </div>
-
+    <div id="nav-placeholder"></div>
+    <div id="chat-placeholder"></div>
 
     <div id="main">
-
 
       <div>
         <h2 class="second-title"> New Found Form </h2>
@@ -131,9 +123,8 @@
 
 			})
 
-      $(function(){
-        $("#nav-placeholder").load("/views/nav.html");
-      });
+      $(function(){$("#nav-placeholder").load("/views/nav.html");});
+      $(function(){$("#chat-placeholder").load("/views/chat.html");});
 
 		</script>
 

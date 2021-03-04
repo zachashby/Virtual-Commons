@@ -2154,7 +2154,7 @@ progress {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  background-color: #fff;
+  background-color: white;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   -webkit-appearance: none;
@@ -2642,10 +2642,13 @@ textarea.form-control-lg {
 
 .input-group {
   position: relative;
-  display: flex;
+  display: block;
   flex-wrap: wrap;
-  align-items: stretch;
-  width: 100%;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  width:60%;
+  max-width: 200px;
 }
 .input-group > .form-control,
 .input-group > .form-select {

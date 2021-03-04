@@ -53,15 +53,21 @@ body {
 body {
   background: linear-gradient(-30deg, #793140, #c93870, #457e81, #23d5ab);
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  animation: gradient 10s ease infinite;
 }
 
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
+  25% {
+    background-position: 100% 100%;
+  }
   50% {
-    background-position: 100% 50%;
+    background-position: 0% 0%;
+  }
+  75% {
+    background-position: 0% 100%;
   }
   100% {
     background-position: 0% 50%;
@@ -102,82 +108,7 @@ form {
     }
 
 
-    #nav-placeholder {
-      height:0;
-    }
-
-    .nav-menu-button {
-      position: relative;
-      background-color: transparent;
-      border: none;
-      outline:none;
-      transition: all 0.5s;
-      cursor: pointer;
-      user-select: none;
-      color: #818181;
-      font-family: 'Josefin Sans', serif;
-    }
-
-    .nav-menu-button:hover {
-      -webkit-transform: translateX(20px);
-      transform: translateX(20px);
-      transition: all 0.25s ease; 
-      cursor: pointer;
-    }
-
-    #open-sidenavv {
-      position: fixed;
-      left: 30px;
-      top: 20px;
-      user-select: none;
-      font-size: 35px;
-      cursor: pointer;
-      z-index: 1;
-    }
-
-    .sidenavv {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 2;
-      top: 0;
-      left: 0;
-      background-color: #111;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 80px;
-      color: inherit;
-    }
-
-    .sidenavv a {
-      padding: 15px 8px 8px 30px;
-      text-decoration: none;
-      font-size: 28px;
-      font-weight: 500;
-      color: inherit;
-      display: block;
-      transition: 0.3s;
-      max-width: 150px;
-      text-align: left;
-    }
-
-    .sidenavv a:hover {
-      color: #457e81;
-    }
-
-    .sidenavv .closebtn {
-      position: absolute;
-      top: 3px;
-      left: 10px;
-      font-size: 70px;
-    }
-
     
-    @media screen and (max-height: 450px) {
-      .sidenavv {padding-top: 15px;}
-      .sidenavv a {font-size: 18px;}
-    }
-
     .input-group {
       display: flex;
       justify-content: center;
@@ -313,20 +244,3 @@ form {
     }
 
 
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}

@@ -1,178 +1,307 @@
-<div class="wrapper">
-  <input type="checkbox">
-  <div class="video">
-    <video src="https://www.robmillsarchitects.com/files/land/city/RMA_Web_land_city_1.mp4" loop muted autoplay></video>
-  </div>
-  <div class="text">
-    <span data-text="Watch the video"></span>
-  </div>
+<div id="container">
+
+  <p><a>
+    What
+  </a></p>
+
+  <p><a href="https://en.wikipedia.org/wiki/Blue">
+    BLUE
+  </a></p>
+
+  <p><a href="https://en.wikipedia.org/wiki/Yellow">
+    Yellow
+  </a></p>
+
+  <p><a href="https://en.wikipedia.org/wiki/Green">
+    GREEN
+  </a></p>
+
+  <p><a href="https://en.wikipedia.org/wiki/Orange_(colour)">
+    ORANGE
+  </a></p>
+
+  <p><a href="https://en.wikipedia.org/wiki/Violet_(color)">
+    VIOLET
+  </a></p>
+
 </div>
 
 <style>
-	.wrapper {
-	  --color: black;
-	  --color-invert: #ffffff;
-	  --clip-path: circle(15px at left);
-	  --clip-path-hover: circle(70px at left);
-	  --clip-path-clicked: circle(100vw at left);
-	  --duration: 0.4s;
-	  --timing-function: ease;
-	  position: relative;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  width: 100%;
-	}
-	.wrapper .video {
-	  height: 100vh;
-	  overflow: hidden;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  margin-left: 15px;
-	  -webkit-clip-path: var(--clip-path);
-	          clip-path: var(--clip-path);
-	  transition: -webkit-clip-path var(--duration) var(--timing-function);
-	  transition: clip-path var(--duration) var(--timing-function);
-	  transition: clip-path var(--duration) var(--timing-function), -webkit-clip-path var(--duration) var(--timing-function);
-	}
-	.wrapper .video video {
-	  position: fixed;
-	  background: #c4cbde;
-	  top: 50%;
-	  left: 50%;
-	  min-width: 100%;
-	  min-height: 100%;
-	  width: auto;
-	  height: auto;
-	  transform: translate(-50%, -50%);
-	}
-	.wrapper .text {
-	  position: relative;
-	  text-transform: uppercase;
-	  font-weight: 600;
-	  letter-spacing: 0.2px;
-	  opacity: var(--opacity, 1);
-	  transition: opacity 0.3s var(--timing-function) 0.2s;
-	}
-	.wrapper .text::before, .wrapper .text::after {
-	  content: "";
-	  position: absolute;
-	  bottom: 0;
-	  left: -1px;
-	  right: 25px;
-	  height: 0;
-	}
-	.wrapper .text::before {
-	  box-shadow: 26px 0 0 1px var(--color);
-	  right: var(--r, 100%);
-	  opacity: var(--opacity, 0);
-	  transition: right 0.5s ease-in, opacity 0.1s linear;
-	}
-	.wrapper .text::after {
-	  box-shadow: 26px 0 0 1px var(--color-invert);
-	  -webkit-clip-path: var(--clip-path);
-	          clip-path: var(--clip-path);
-	  transition: -webkit-clip-path var(--duration) var(--timing-function);
-	  transition: clip-path var(--duration) var(--timing-function);
-	  transition: clip-path var(--duration) var(--timing-function), -webkit-clip-path var(--duration) var(--timing-function);
-	}
-	.wrapper .text > span::before, .wrapper .text > span::after {
-	  content: attr(data-text);
-	  padding-left: 26px;
-	}
-	.wrapper .text > span::before {
-	  color: var(--color);
-	}
-	.wrapper .text > span::after {
-	  color: var(--color-invert);
-	  -webkit-clip-path: var(--clip-path);
-	          clip-path: var(--clip-path);
-	  transition: -webkit-clip-path var(--duration) var(--timing-function);
-	  transition: clip-path var(--duration) var(--timing-function);
-	  transition: clip-path var(--duration) var(--timing-function), -webkit-clip-path var(--duration) var(--timing-function);
-	  position: absolute;
-	  left: 0;
-	}
-	.wrapper input {
-	  width: 220px;
-	  height: 40px;
-	  margin: auto;
-	  position: absolute;
-	  left: 0;
-	  right: 0;
-	  border-radius: 40px;
-	  z-index: 2;
-	  -webkit-appearance: none;
-	     -moz-appearance: none;
-	          appearance: none;
-	  cursor: pointer;
-	}
-	.wrapper input:focus {
-	  outline: 0;
-	}
-	.wrapper input:hover ~ .video {
-	  -webkit-clip-path: var(--clip-path-hover);
-	          clip-path: var(--clip-path-hover);
-	}
-	.wrapper input:hover ~ .text::before {
-	  --r: 25px;
-	  --opacity: 1;
-	}
-	.wrapper input:hover ~ .text::after {
-	  -webkit-clip-path: var(--clip-path-hover);
-	          clip-path: var(--clip-path-hover);
-	}
-	.wrapper input:hover ~ .text > span::after {
-	  -webkit-clip-path: var(--clip-path-hover);
-	          clip-path: var(--clip-path-hover);
-	}
-	.wrapper input:checked {
-	  width: 100%;
-	  height: 100%;
-	  border-radius: 0;
-	}
-	.wrapper input:checked ~ .video {
-	  -webkit-clip-path: var(--clip-path-clicked);
-	          clip-path: var(--clip-path-clicked);
-	}
-	.wrapper input:checked ~ .text {
-	  --opacity: 0;
-	  transition: opacity 0.3s var(--timing-function);
-	}
-	.wrapper input:checked ~ .text::after {
-	  -webkit-clip-path: var(--clip-path-clicked);
-	          clip-path: var(--clip-path-clicked);
-	}
-	.wrapper input:checked ~ .text > span::after {
-	  -webkit-clip-path: var(--clip-path-clicked);
-	          clip-path: var(--clip-path-clicked);
-	}
+body {
+  background-color: #222222;
+}
 
-	body {
-	  background: #e8ebf3;
-	  height: 100vh;
-	  font: 400 16px "Poppins", sans-serif;
-	  display: flex;
-	  flex-direction: column;
-	  justify-content: center;
-	  align-items: center;
-	}
-	body .socials {
-	  position: fixed;
-	  display: block;
-	  left: 20px;
-	  bottom: 20px;
-	  z-index: 9999;
-	}
-	body .socials > a {
-	  display: block;
-	  width: 30px;
-	  opacity: 0.2;
-	  transform: scale(var(--scale, 0.8));
-	  transition: transform 0.3s cubic-bezier(0.38, -0.12, 0.24, 1.91);
-	}
-	body .socials > a:hover {
-	  --scale: 1;
-	}
+#container {
+  width: 500px;
+  margin: auto;
+}
+
+/*Neon*/
+p {
+  text-align: center;
+  font-size: 7em;
+  margin: 20px 0 20px 0;
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+p:nth-child(1) a {
+  color: #fff;
+  font-family: Monoton;
+  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+
+p:nth-child(1) a:hover {
+  color: #FF1177;
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none;
+}
+
+p:nth-child(2) a {
+  font-size: 1.5em;
+  color: #228DFF;
+  font-family: Iceland;
+}
+
+p:nth-child(2) a:hover {
+  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+  animation: neon2 1.5s ease-in-out infinite alternate;
+}
+
+p:nth-child(3) a {
+  color: #FFDD1B;
+  font-family: Pacifico;
+}
+
+p:nth-child(3) a:hover {
+  -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon3 1.5s ease-in-out infinite alternate;
+  animation: neon3 1.5s ease-in-out infinite alternate;
+}
+
+p:nth-child(4) a {
+  color: #B6FF00;
+  font-family: "Press Start 2P";
+  font-size: 0.8em;
+}
+
+p:nth-child(4) a:hover {
+  -webkit-animation: neon4 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon4 1.5s ease-in-out infinite alternate;
+  animation: neon4 1.5s ease-in-out infinite alternate;
+}
+
+p:nth-child(5) a {
+  color: #FF9900;
+  font-family: Audiowide;
+}
+
+p:nth-child(5) a:hover {
+  -webkit-animation: neon5 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon5 1.5s ease-in-out infinite alternate;
+  animation: neon5 1.5s ease-in-out infinite alternate;
+}
+
+p:nth-child(6) a {
+  color: #BA01FF;
+  font-family: Vampiro One;
+}
+
+p:nth-child(6) a:hover {
+  -webkit-animation: neon6 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon6 1.5s ease-in-out infinite alternate;
+  animation: neon6 1.5s ease-in-out infinite alternate;
+}
+
+p a:hover {
+  color: #ffffff;
+}
+/*glow for webkit*/
+
+@-webkit-keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+  }
+}
+
+@-webkit-keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+
+@-webkit-keyframes neon3 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+  }
+}
+
+@-webkit-keyframes neon4 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #B6FF00, 0 0 70px #B6FF00, 0 0 80px #B6FF00, 0 0 100px #B6FF00, 0 0 150px #B6FF00;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #B6FF00, 0 0 35px #B6FF00, 0 0 40px #B6FF00, 0 0 50px #B6FF00, 0 0 75px #B6FF00;
+  }
+}
+
+@-webkit-keyframes neon5 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
+  }
+}
+
+@-webkit-keyframes neon6 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+}
+/*glow for mozilla*/
+
+@-moz-keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+  }
+}
+
+@-moz-keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+
+@-moz-keyframes neon3 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+  }
+}
+
+@-moz-keyframes neon4 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #B6FF00, 0 0 70px #B6FF00, 0 0 80px #B6FF00, 0 0 100px #B6FF00, 0 0 150px #B6FF00;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #B6FF00, 0 0 35px #B6FF00, 0 0 40px #B6FF00, 0 0 50px #B6FF00, 0 0 75px #B6FF00;
+  }
+}
+
+@-moz-keyframes neon5 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
+  }
+}
+
+@-moz-keyframes neon6 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+}
+/*glow*/
+
+@keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+  }
+}
+
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+
+@keyframes neon3 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+  }
+}
+
+@keyframes neon4 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #B6FF00, 0 0 70px #B6FF00, 0 0 80px #B6FF00, 0 0 100px #B6FF00, 0 0 150px #B6FF00;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #B6FF00, 0 0 35px #B6FF00, 0 0 40px #B6FF00, 0 0 50px #B6FF00, 0 0 75px #B6FF00;
+  }
+}
+
+@keyframes neon5 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
+  }
+}
+
+@keyframes neon6 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+}
+/*REEEEEEEEEEESPONSIVE*/
+
+@media (max-width: 650px) {
+  #container {
+    width: 100%;
+  }
+  p {
+    font-size: 3.5em;
+  }
+}
 	</style>
+
+
+
+	 

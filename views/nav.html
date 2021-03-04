@@ -1,6 +1,81 @@
- <link 
-      rel="stylesheet" 
-      href="/public/style.css"/>
+<style>
+	#nav-placeholder {
+      height:0;
+    }
+
+    .nav-menu-button {
+      position: relative;
+      background-color: transparent;
+      border: none;
+      outline:none;
+      transition: all 0.5s;
+      cursor: pointer;
+      user-select: none;
+      color: #818181;
+      font-family: 'Josefin Sans', serif;
+    }
+
+    .nav-menu-button:hover {
+      -webkit-transform: translateX(20px);
+      transform: translateX(20px);
+      transition: all 0.25s ease; 
+      cursor: pointer;
+    }
+
+    #open-sidenavv {
+      position: fixed;
+      left: 30px;
+      top: 20px;
+      user-select: none;
+      font-size: 35px;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .sidenavv {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 80px;
+      color: inherit;
+    }
+
+    .sidenavv a {
+      padding: 15px 8px 8px 30px;
+      text-decoration: none;
+      font-size: 28px;
+      font-weight: 500;
+      color: inherit;
+      display: block;
+      transition: 0.3s;
+      max-width: 150px;
+      text-align: left;
+    }
+
+    .sidenavv a:hover {
+      color: #457e81;
+    }
+
+    .sidenavv .closebtn {
+      position: absolute;
+      top: 3px;
+      left: 10px;
+      font-size: 70px;
+    }
+
+    
+    @media screen and (max-height: 450px) {
+      .sidenavv {padding-top: 15px;}
+      .sidenavv a {font-size: 18px;}
+    }
+
+</style>
 
 <span id="open-sidenavv" onclick="openNav()">&#9776;</span>
 
@@ -45,7 +120,11 @@
  	function openNav() {
  		document.getElementById("mySidenavv").style.width = "220px";
  		document.getElementById("main").style.marginLeft = "220px";
-		document.getElementById("main").style.filter = "blur(4px)"; 	
+		document.getElementById("main").style.filter = "blur(4px)";
+		if (document.getElementById("mySideChat").style.width != "0px") {
+			document.getElementById("mySideChat").style.width = "0px";
+			document.getElementById('myChatButton').classList.toggle('active'); 	
+		}
 	}
 
  	function closeNav() {
@@ -54,3 +133,4 @@
  		document.getElementById("main").style.filter = "blur(0px)";
  	}
  </script>
+

@@ -13,8 +13,8 @@
 	</head>
 
 	<body>
-		<div id="nav-placeholder">
-		</div>
+		<div id="nav-placeholder"></div>
+		<div id="chat-placeholder"></div>
 
 		<div id="main">
 			<h2 class="second-title">Tutoring</h2>
@@ -27,6 +27,7 @@
 
 			<button type = "submit" >Request tutor</button>
 			</form>
+
 		</div>
 
 		<script>
@@ -55,6 +56,9 @@
 				return false;
 
 			})
+
+			$(function(){$("#nav-placeholder").load("/views/nav.html");});
+			$(function(){$("#chat-placeholder").load("/views/chat.html");});
 
 		</script>
 
