@@ -13,7 +13,7 @@ const io = require('socket.io')(http);
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
-const { new_news, new_lost_form, new_tutoring, new_vid, return_news, return_lost_form } = require("./db.js");
+const { new_news, new_lost_form, new_tutoring, new_vid, return_news, return_lost_form, return_tutoring } = require("./db.js");
 
 app.use(express.static("."));
 
@@ -152,7 +152,15 @@ app.get('/return_lost_form', (req, res) => {
 
 });
 
+app.get('/return_tutoring', (req, res) => {
 
+	let returned = return_tutoring();
+
+	returned.then(function(data){
+		res.send(data);
+	});
+
+});
 
 
 //CHAT FUNCTION

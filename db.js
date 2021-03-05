@@ -75,6 +75,15 @@ const return_lost_form = async () => {
 
 }
 
+
+const return_tutoring = async () => {
+
+    let all_forms = await tutoring_db.fetch().next();
+
+    return (all_forms.value);
+
+}
+
 // export
 module.exports = {
     new_news,
@@ -82,6 +91,7 @@ module.exports = {
     new_tutoring,
     new_vid,
     return_news,
-    return_lost_form
+    return_lost_form,
+    return_tutoring
 }
 

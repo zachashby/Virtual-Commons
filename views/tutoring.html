@@ -10,6 +10,16 @@
 		src="https://code.jquery.com/jquery-3.3.1.min.js"
 		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 		crossorigin="anonymous"></script>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link 
+	rel="stylesheet" 
+	href="/public/bootstrap.css"/>
+
+	<link rel="stylesheet" href="/public/style.css" />
+
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.js"></script>
+
 	</head>
 
 	<body>
@@ -28,7 +38,14 @@
 			<button type = "submit" >Request tutor</button>
 			</form>
 
+		</br>
+		</br>
+
+			<div id="main1" class = "row justify-content-center"></div>
+
 		</div>
+
+	
 
 		<script>
 			$(function(){
@@ -37,6 +54,17 @@
 		</script>
 
 		<script type="text/javascript">
+
+			$.get("/return_tutoring", function(data){
+				console.log("Hello");
+				for (let i=0; i< data.length; i++){
+
+					var temp = '<div class="card" style="width: 20rem;" style = "background-color: rgba(0,0,0, 0.4);">												<div class="card-body">																												<h5 class="card-title" style="color:black;">{{name}}</h5> 																														<p class="card-text" style="color:black;"> {{student_name}} ({{grade}}th grade)</p										style="color:black;">Contact {{email}}</p><p class="card-text" style="color:black;">Need Help With {{subject}}                                 </p style="color:black;">{{note}}</p>																	</div> 																														</div>';
+					$('#main1').append( Mustache.render(temp,data[i]));
+
+
+				}
+			});
 
 			$("#submit_tutoring").click(function(){
 
