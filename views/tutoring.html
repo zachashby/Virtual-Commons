@@ -28,16 +28,15 @@
 
 		<div id="main">
 			<h2 class="second-title">Tutoring</h2>
-			<form method="post" action="/tutoring_request">
-			<h2>Name <input type="text" name="student_name"></h2>
-			<h2>Grade <input type="text" name="student_grade"></h2>
-			<h2>Email <input type="text" name="email"></h2>
-			<h2>Course <input type="text" name="course"></h2>
-			<h2>Note <input type="text" name="note"></h2>
+			<form method="post" action="/tutoring_request" id="tutor-request-form">
+				<h2>Name <input type="text" name="student_name"></h2>
+				<h2>Grade <input type="text" name="student_grade"></h2>
+				<h2>Email <input type="text" name="email"></h2>
+				<h2>Course <input type="text" name="course"></h2>
+				<h2>Note <input type="text" name="note"></h2>
 
-			<button type = "submit" >Request tutor</button>
+				<button type = "submit" >Request tutor</button>
 			</form>
-
 		</br>
 		</br>
 
@@ -45,7 +44,15 @@
 
 		</div>
 
-	
+		<style>
+			#tutor-request-form{
+
+			}
+
+			#tutor-request-form input{
+				color: black;
+			}
+		</style>
 
 		<script>
 			$(function(){
