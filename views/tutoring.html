@@ -59,7 +59,7 @@
 				console.log("Hello");
 				for (let i=0; i< data.length; i++){
 
-					var temp = '<div class="card" style="width: 20rem;" style = "background-color: rgba(0,0,0, 0.4);">												<div class="card-body">																												<h5 class="card-title" style="color:black;">{{name}}</h5> 																														<p class="card-text" style="color:black;"> {{student_name}} ({{grade}}th grade)</p										style="color:black;">Contact {{email}}</p><p class="card-text" style="color:black;">Need Help With {{subject}}                                 </p style="color:black;">{{note}}</p>																	</div> 																														</div>';
+					var temp = '<div class="card" style="width: 20rem;" style = "background-color: rgba(0,0,0, 0.4);">												<div class="card-body">																												<h5 class="card-title" style="color:black;">{{name}}</h5> 																														<p class="card-text" style="color:black;"> {{student_name}} ({{grade}}th grade)</p>										<p style="color:black;">Contact {{email}}</p><p class="card-text" style="color:black;">Need Help With {{subject}}                                 </p> <p style="color:black;" class="card-text">{{note}}</p>																	</div> 																														</div>';
 					$('#main1').append( Mustache.render(temp,data[i]));
 
 
