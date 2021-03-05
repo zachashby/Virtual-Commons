@@ -3,31 +3,31 @@
 
 :root {
 
-    --main-color: #793140;
-    --secondary-color: #457e81;
+  --main-color: #793140;
+  --secondary-color: #457e81;
 
-    --input-color: black;
-    --input-border: black;
-    --input-background: #fff;
-    --input-placeholder: #ababab;
-    --input-border-focus: pink;
-    --group-color: var(--input-color);
-    --group-border: var(--input-border);
-    --group-background: #a8a8a8;
-    --group-color-focus: #fff;
-    --group-border-focus: var(--input-border-focus);
-    --group-background-focus: #457e81;
+  --input-color: black;
+  --input-border: black;
+  --input-background: #fff;
+  --input-placeholder: #ababab;
+  --input-border-focus: pink;
+  --group-color: var(--input-color);
+  --group-border: var(--input-border);
+  --group-background: #a8a8a8;
+  --group-color-focus: #fff;
+  --group-border-focus: var(--input-border-focus);
+  --group-background-focus: #457e81;
 }
 
 
 * {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 
 html {
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
 html,
@@ -39,16 +39,16 @@ body {
   flex-direction: column;
 }
 
-    
+
 body {
-      font-family: 'Josefin Sans', serif;
-      background-color: #793140;
-      transition: background-color .5s;
-      color: white;
-      margin: 0px;
-      transition: filter .5s;
-      
-    }
+  font-family: 'Josefin Sans', serif;
+  background-color: #793140;
+  transition: background-color .5s;
+  color: white;
+  margin: 0px;
+  transition: filter .5s;
+
+}
 
 body {
   background: linear-gradient(-30deg, #793140, #c93870, #457e81, #23d5ab);
@@ -83,164 +83,164 @@ form {
   background-color: inherit;
 }
 
-    .main-title {
-      position: relative;
-      font-size: 4.5em;
-      font-weight: 800;
-      cursor: pointer;
-      user-select: none;
-      padding-left: 40px;
-      padding-right: 40px;
-      top: 40%;
-      translate: translateY(-50%);
-      margin:0px;
-    }
+.main-title {
+  position: relative;
+  font-size: 4.5em;
+  font-weight: 800;
+  cursor: pointer;
+  user-select: none;
+  padding-left: 40px;
+  padding-right: 40px;
+  top: 40%;
+  translate: translateY(-50%);
+  margin:0px;
+}
 
-    #main {
-      position: relative;
-      transition: margin-left .5s;
-      height: 100vh;
-      margin-left: 0px;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      user-select: none;
-    }
-
-
-    
-    .input-group {
-      display: flex;
-      justify-content: center;
-    }
-
-    h2.second-title {
-      position: relative;
-      padding:50px;
-      font-size: 40px;
-    }
-
-    .lost-form-container {
-      display: inline-block;
-      justify-content: center;
-    }
-
-    .form-btn-group {
-      font-size: 40px;
-      color: #c2c2c2;
-      text-align: left;
-      margin-bottom: 40px;
-      padding-bottom: 10px;
-      border-bottom: 3px solid var(--secondary-color);
-      width: auto;
-    }
-
-    .form-btn-group .btn{
-      font-size: 20px;
-      color: #c2c2c2;
-    }
-
-    .form-check-label {
-      font-size: 30px;
-    }
-
-    input#inlineRadio.form-check-input {
-      border:0px;
-      width:25px;
-      height:25px;
-      margin-left:0px;
-      margin-right:10px;
-    }
-
-    div.form-check.form-check-inline {
-      padding: 0;
-    }
-
-    input,span,label,{
-      display: block;
-      margin: 10px;
-      padding: 5px;
-      border: none;
-    }
-
-    input {
-      font-size: 12px;
-      color: white;
-    }
-
-    input:focus {
-      outline: 0;
-    }
-
-    input.question {
-      font-size: 40px;
-      font-weight: 200;
-      border-radius: 10px;
-      margin: 0;
-      border: none;
-      width: 80%;
-      background: transparent;
-      transition: padding-top 0.2s ease, margin-top 0.2s ease;
-      overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
-    }
+#main {
+  position: relative;
+  transition: margin-left .5s;
+  height: 100vh;
+  margin-left: 0px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
 
 
-    input.question + label {
-      display: block;
-      position: relative;
-      white-space: nowrap;
-      padding: 0;
-      margin-bottom: 50px;
-      width: 10%;
-      border-top: 3px solid var(--secondary-color);
-      -webkit-transition: width 0.4s ease;
-      transition: width 0.4s ease;
-      height: 0px;
-    }
 
-    input.question:focus + label {
-      width: 80%;
-    }
+.input-group {
+  display: flex;
+  justify-content: center;
+}
 
-    input.question:focus,
-    input.question:valid {
-      padding-top: 35px;
-    }
+h2.second-title {
+  position: relative;
+  padding:50px;
+  font-size: 40px;
+}
 
-    input.question:focus + label > span,
-    input.question:valid + label > span {
-      top: -100px;
-      font-size: 22px;
-      color: white;
-    }
+.lost-form-container {
+  display: inline-block;
+  justify-content: center;
+}
 
-    input.question:valid + label {
-      border-color: #478145;
-    }
+.form-btn-group {
+  font-size: 40px;
+  color: #c2c2c2;
+  text-align: left;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--secondary-color);
+  width: auto;
+}
 
-    input.question + label > span {
-      font-weight: 300;
-      margin: 0;
-      position: absolute;
-      color: #c2c2c2;
-      font-size: 40px;
-      top: -66px;
-      left: 0px;
-      z-index: -1;
-      -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
-      transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
-    }
+.form-btn-group .btn{
+  font-size: 20px;
+  color: #c2c2c2;
+}
 
-    @-webkit-keyframes appear {
-      100% {
-        opacity: 1;
-      }
-    }
+.form-check-label {
+  font-size: 30px;
+}
 
-    @keyframes appear {
-      100% {
-        opacity: 1;
-      }
-    }
+input#inlineRadio.form-check-input {
+  border:0px;
+  width:25px;
+  height:25px;
+  margin-left:0px;
+  margin-right:10px;
+}
+
+div.form-check.form-check-inline {
+  padding: 0;
+}
+
+input,span,label,{
+  display: block;
+  margin: 10px;
+  padding: 5px;
+  border: none;
+}
+
+input {
+  font-size: 12px;
+  color: white;
+}
+
+input:focus {
+  outline: 0;
+}
+
+input.question {
+  font-size: 40px;
+  font-weight: 200;
+  border-radius: 10px;
+  margin: 0;
+  border: none;
+  width: 80%;
+  background: transparent;
+  transition: padding-top 0.2s ease, margin-top 0.2s ease;
+  overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+}
+
+
+input.question + label {
+  display: block;
+  position: relative;
+  white-space: nowrap;
+  padding: 0;
+  margin-bottom: 50px;
+  width: 10%;
+  border-top: 3px solid var(--secondary-color);
+  -webkit-transition: width 0.4s ease;
+  transition: width 0.4s ease;
+  height: 0px;
+}
+
+input.question:focus + label {
+  width: 80%;
+}
+
+input.question:focus,
+input.question:valid {
+  padding-top: 35px;
+}
+
+input.question:focus + label > span,
+input.question:valid + label > span {
+  top: -100px;
+  font-size: 22px;
+  color: white;
+}
+
+input.question:valid + label {
+  border-color: #478145;
+}
+
+input.question + label > span {
+  font-weight: 300;
+  margin: 0;
+  position: absolute;
+  color: #c2c2c2;
+  font-size: 40px;
+  top: -66px;
+  left: 0px;
+  z-index: -1;
+  -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+@-webkit-keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
 
 

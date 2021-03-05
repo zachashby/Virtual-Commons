@@ -6,10 +6,12 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link 
-      rel="stylesheet" 
-      href="/public/bootstrap.css"/>
+	rel="stylesheet" 
+	href="/public/bootstrap.css"/>
 
 	<link rel="stylesheet" href="/public/style.css" />
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.js"></script>
 
 </head>
 
@@ -27,42 +29,41 @@
 			</button>
 		</form>
 
-		</br>
+	</br>
 
 	
 
-		<div>
-			<form method="get" action="/new_form">
-				<button class="btn btn-secondary">I lost something &#128549;</button>
-			</form>
-			<form method="get" action="/new_found_form">
-				<button class="btn btn-secondary">I found somethign &#128513;</button>
-			</form>
-
-			<button onclick="run()">Update &#128513;</button>
-
-		</div>
-
-		<div class="container">
-			<div class="row">
-				<div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<h1 class="gallery-title">Lost Items</h1>
-				</div>
-
-				<div class="filter-button">
-					<button class="btn btn-info filter-button" data-filter="all">All</button>
-					<button class="btn btn-info filter-button" data-filter="elctronics">Electronic Devices</button>
-					<button class="btn btn-info filter-button" data-filter="books">Books</button>
-					<button class="btn btn-info filter-button" data-filter="clothing">Clothing</button>
-					<button class="btn btn-info filter-button" data-filter="others">Others</button>
-				</div>
-				<br/>
-
-		    </div>
-		</div>
+	<div>
+		<form method="get" action="/new_form">
+			<button class="btn btn-secondary">I lost something &#128549;</button>
+		</form>
+		<form method="get" action="/new_found_form">
+			<button class="btn btn-secondary">I found somethign &#128513;</button>
+		</form>
 	</div>
 
-	<div id="main1"></div>
+	<div class="container">
+		<div class="row">
+			<div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<h1 class="gallery-title">Lost Items</h1>
+			</div>
+
+			<div class="filter-button">
+				<button class="btn btn-info filter-button" data-filter="all">All</button>
+				<button class="btn btn-info filter-button" data-filter="elctronics">Electronic Devices</button>
+				<button class="btn btn-info filter-button" data-filter="books">Books</button>
+				<button class="btn btn-info filter-button" data-filter="clothing">Clothing</button>
+				<button class="btn btn-info filter-button" data-filter="others">Others</button>
+			</div>
+			<br/>
+
+		</div>
+	</div>
+</div>
+
+<div class = "container">
+<div id="main1" class = "row justify-content-center"></div>
+</div>
 
 <script>
 	$(function(){$("#nav-placeholder").load("/views/nav.html");});
@@ -71,18 +72,16 @@
 
 	$.get("/return_lost_form", function(data){
 
+		console.log(data)
+
 		
 		for (let i=0; i< data.length; i++){
 
-			document.getElementById("main1").innerHTML += data[i].description;
-			document.getElementById("main1").innerHTML += "</br>";
-			document.getElementById("main1").innerHTML += data[i].student_name;
-			document.getElementById("main1").innerHTML += "</br>";
-			document.getElementById("main1").innerHTML += data[i].grade;
-			document.getElementById("main1").innerHTML += "</br>";
-			document.getElementById("main1").innerHTML += data[i].email;
+		var temp = '<div class="card" style="width: 20rem;" style = "background-color: rgba(0,0,0, 0.4);"><div class="card-body"> <h5 class="card-title" style="color:black;" >{{description}}</h5> <h6 class="card-subtitle mb-2 text-muted">Last seen in {{location}}</h6> <p class="card-text" style="color:black;">Owner: {{student_name}} ({{grade}}th grade)</p><a href="..." class="card-link">{{grade}}</a><a href="..." class="card-link">{{student_name}}</a></div> </div>';
 
-		}	
+		$('#main1').append( Mustache.render(temp,data[i]));
+
+	}
 
 	});
 
